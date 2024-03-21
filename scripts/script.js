@@ -7,17 +7,25 @@ iTwo =document.querySelector('.two'),
 iThree =document.querySelector('.three'),
 iHolder =document.querySelector('.img-holder');
 const circles = document.querySelectorAll('.feat');
-
+const drop = document.querySelector('.dots');
+const close = document.querySelector('.close');
+drop.addEventListener('click',function(){
+    document.querySelector('.nav-drop').classList.add('active');
+    document.body.style.overflow='hidden';
+})
+close.addEventListener('click',function(){
+    document.querySelector('.nav-drop').classList.remove('active');
+    document.body.style.overflowY='scroll';
+})
 gsap.registerPlugin(ScrollTrigger);
 let tl = gsap.timeline({repeat:-1});
-
 tl.to(iHolder,{
-    left: '40%',
+    left: '45%',
     duration:1,
     ease: "elastic.out(.2,0.3)",
 },'simultaneously')
 tl.to(one,{
-    left:'10%',
+    left:'15%',
     duration:.5,
     ease: "elastic.out(.2,0.3)",
 },'simultaneously')
@@ -34,12 +42,12 @@ tl.to(iTwo,{
     zIndex:'5',
 })
 tl.to(iHolder,{
-    left: '40%',
+    left: '45%',
     duration:.8,
     ease: "elastic.out(.2,0.3)",
 })
 tl.to(two,{
-    left:'10%',
+    left:'15%',
     duration:.5,
     ease: "elastic.out(.2,0.3)",
 })
@@ -57,12 +65,12 @@ tl.to(iThree,{
     zIndex:'5',
 })
 tl.to(iHolder,{
-    left: '40%',
+    left: '45%',
     duration:.8,
     ease: "elastic.out(.2,0.3)",
 })
 tl.to(three,{
-    left:'10%',
+    left:'15%',
     duration:.3,
     ease: "elastic.out(.2,0.3)",
 })
@@ -76,6 +84,73 @@ tl.to(three,{
     duration:.2,
     
 })
+
+// tl.to(iHolder,{
+//     left: '40%',
+//     duration:1,
+//     ease: "elastic.out(.2,0.3)",
+// },'simultaneously')
+// tl.to(one,{
+//     left:'10%',
+//     duration:.5,
+//     ease: "elastic.out(.2,0.3)",
+// },'simultaneously')
+// tl.to(iHolder,{
+//     left:'125%',
+//     duration:.2,
+//     delay:3,
+// })
+// tl.to(one,{
+//     left:'-200%',
+//     duration:.2,  
+// })
+// tl.to(iTwo,{
+//     zIndex:'5',
+// })
+// tl.to(iHolder,{
+//     left: '40%',
+//     duration:.8,
+//     ease: "elastic.out(.2,0.3)",
+// })
+// tl.to(two,{
+//     left:'10%',
+//     duration:.5,
+//     ease: "elastic.out(.2,0.3)",
+// })
+// tl.to(iHolder,{
+//     left:'125%',
+//     duration:.2,
+//     delay:2,
+// })
+// tl.to(two,{
+//     left:'-200%',
+//     duration:.2,
+    
+// })
+// tl.to(iThree,{
+//     zIndex:'5',
+// })
+// tl.to(iHolder,{
+//     left: '40%',
+//     duration:.8,
+//     ease: "elastic.out(.2,0.3)",
+// })
+// tl.to(three,{
+//     left:'10%',
+//     duration:.3,
+//     ease: "elastic.out(.2,0.3)",
+// })
+// tl.to(iHolder,{
+//     left: '125%',
+//     duration:.2,
+//     delay:3,
+// })
+// tl.to(three,{
+//     left:'-200%',
+//     duration:.2,
+    
+// })
+
 // animation for what section
 
 let tl2 = gsap.timeline({
@@ -84,15 +159,15 @@ let tl2 = gsap.timeline({
         start:'top 50%',
         end: 'bottom 50%',
         duration:.5,
-        toggleActions:"play reset play reset"
+        // toggleActions:"play reset play reset"
     }
 });
 tl2.from('.desc',{
-    x:'-150%',
+    x:'-250%',
     ease: "elastic.out(.2,0.3)",
 },'simultaneously')
 tl2.from('.image-container',{
-    x:'150%',
+    x:'250%',
     ease: "elastic.out(.2,0.3)",
 },'simultaneously');
 
@@ -102,8 +177,8 @@ let tl3 = gsap.timeline({
         trigger: "#features",
         start: "top 50%",
         // end: "bottom 50%",
-        markers: true,
-        toggleActions: 'play reset play reset'
+        // markers: true,
+        // toggleActions: 'play reset play reset'
       }
 })
 
