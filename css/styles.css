@@ -38,7 +38,7 @@ nav.active{
 .nav-drop{
     width:100%;
     height: 100vh;
-    position:absolute;
+    position:fixed;
     top:-150%;
     background: black;
     transition: .5s ease;
@@ -58,6 +58,7 @@ nav.active{
 .nav-drop.active{
     top:0;
 }
+
 .logo{
     width:150px;
     height: 100px;
@@ -84,7 +85,7 @@ nav.active{
 .dots{
     margin-right:10%;
     cursor: pointer;
-    
+    transition: .2s ease;
 }
 .dots img{
     width:100%;
@@ -270,7 +271,7 @@ section{
     text-align: justify;
 }
 .image-container{
-    width:30%;
+    width:35%;
     height: 80%;
     position: relative;
 }
@@ -375,10 +376,10 @@ left:-100%
 #howto p{
     color:black;
     position:absolute;
-    top:60%;
+    top:50%;
 }
 #howto p:nth-of-type(2){
-    left:-100%;
+    left:150%;
 }
 .howto-desc{
     width:45%;
@@ -392,18 +393,10 @@ left:-100%
 }
 .howto-img-wrapper{
     position: relative;
+    width:82%;
+    margin: 5rem auto auto;
 }
-.howto-img-container img::after{
-    content:'';
-    position: absolute;
-    width:30%;
-    height:100%;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    object-fit: contain;
-    
-}
+
 .howto-img-container{
     width: 25%;
 }
@@ -423,4 +416,8 @@ left:-100%
 }
 .howto-write{
     width:30%;
+    font-size: 1.2rem;
+}
+.howto-write p{
+    width:20%;
 }
