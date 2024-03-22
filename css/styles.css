@@ -16,18 +16,24 @@ html{
 }
 body{
     overflow-x: hidden;
+    font-family: 'Nexa-Heavy';
 }
 nav{
     width:100%;
     background: black;
     height:15vh;
-    border-radius: 0 0 15% 15%;
+    border-radius: 0 0 55% 5%;
     position: sticky;
     top:0;
     z-index: 100;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: .3s ease;
+}
+nav.active{
+    height:10vh;
+    border-radius: 0;
 }
 .nav-drop{
     width:100%;
@@ -37,7 +43,6 @@ nav{
     background: black;
     transition: .5s ease;
     z-index: 100;
-    
 }
 
 .close{
@@ -47,20 +52,35 @@ nav{
     color: white;
     font-size: 3rem;
     top:15%;
-    right:5%
+    right:5%;
+    cursor:pointer;
 }
 .nav-drop.active{
     top:0;
 }
 .logo{
-    width:100px;
-    height: 80px;
+    width:150px;
+    height: 100px;
     /* display: grid;
     place-items: center; */
     margin-left:10% ;
-    padding-top:1rem;
+    /* padding-top:1rem; */
+    transition: .3s ease;
+    position: relative;
     /* background: rgba(255,255,255,1); */
 }
+.logo img{
+    position: absolute;
+    /* object-fit: cover; */
+    width:100%;
+    height: 100%;
+}
+.logo.active{
+    height:80px;
+    width:100px;
+    padding-top: 0;
+}
+
 .dots{
     margin-right:10%;
     cursor: pointer;
@@ -69,8 +89,9 @@ nav{
 .dots img{
     width:100%;
 }
-h1, h2,h3,p{
+h1, h2,h3,h4,p{
     font-family: 'Nexa-Heavy';
+    color:#D92728;
 }
 .hero{
     width:100%;
@@ -212,7 +233,7 @@ section{
     height: 400px;
     border-radius: 50%;
     position: absolute;
-    z-index: -1;
+    z-index: -5;
 }
 .red-circle{
     background-color: red;
@@ -243,6 +264,7 @@ section{
 }
 .desc p{
     font-size: 1.2rem;
+    color:black;
     line-height: 1.2;
     width: 80%;  
     text-align: justify;
@@ -277,6 +299,7 @@ section{
     width: 220px;
     height: 220px;
     background: #D92728;
+    
     border-radius: 50%;
     position: relative;
     text-align: center;
@@ -284,19 +307,21 @@ section{
     top:0;
 }
 .feat h3{
-    font-size: 1.5rem;
+font-size: 1.5rem;
 position: absolute;
 top:50%;
 left:50%;
 transform: translate(-50%,-50%);
+color:black;
+
 }
 .feat-under{
     position: absolute;
     width:100%;
     height: 100%;
     border-radius: 50%;
-    background: #D9D9D9;
-    transition: .5s ease;
+    background: black;
+    transition: .3s ease;
     z-index: -2;
     display: grid;
     place-items:center;
@@ -308,26 +333,94 @@ transform: translate(-50%,-50%);
     position: absolute;
     width:100%;
     height:50%;
-    background:#D9D9D9;
+    background:black;
     border-radius: 0 0 150% 150%;
     bottom:-25%;
+    opacity: 1;
 
 }
 .feat-under p{
     position: absolute;
-    top:60%;
+    top:55%;
     width:70%;
     transform: translateY(10%);
+    color:white;
 }
 .feat:hover > .feat-under{
 height: 160% ;
-border-radius: 45% 45% 0 0;
+transform: translateY(10px);
+border-radius: 60% 60% 0 0;
 opacity: 1;
-
 }
+
 .feat:hover{
     cursor:pointer;
     /* background: #D92708; */
     top:-20px;
     transition: .3s ease;
+}
+#howto h2{
+    font-size: 5rem;
+}
+#howto h4{
+    font-size: 2rem;
+    /* position: relative; */
+    position: absolute;
+    top:15%;
+    width:40%;
+}
+#howto h4:nth-of-type(2){
+left:-100%
+}
+#howto p{
+    color:black;
+    position:absolute;
+    top:60%;
+}
+#howto p:nth-of-type(2){
+    left:-100%;
+}
+.howto-desc{
+    width:45%;
+}
+.howto-container{
+    display: flex;
+    /* justify-content: center; */
+    align-items: flex-start;
+    position: relative;
+
+}
+.howto-img-wrapper{
+    position: relative;
+}
+.howto-img-container img::after{
+    content:'';
+    position: absolute;
+    width:30%;
+    height:100%;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    object-fit: contain;
+    
+}
+.howto-img-container{
+    width: 25%;
+}
+.howto-img-wrapper::before{
+    content:'';
+    position: absolute;
+    width:65%;
+    height: 70%;
+    /* background: red; */
+    background-image: url(https://s3-alpha-sig.figma.com/img/f692/cf9a/8cf7d96371ba91c8381ca80e54f0b94b?Expires=1711929600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=AcrapO9zt5M8pPt5C5oSnH0bUIIVaSZS4HcAae9pN2vb7l32Ti2x89KAvxMX2zAmjWi6AjcV~iLMA8fQvvUE09aUz5yo1WK0xch7WbuteLFFEdkyW54QoQcpUvxhIzpeaRBGCwng1xu~MfMgxYECAQ3rjSNNAy4pZZ1pjM3EkqwwByLNE8A9F1ssJ~m2ozPsjx4unten-vvYzrGzPVnM80Xx1inZpOecpgLNazAr4Jt2jHDfQCBf~BsIsZfqapeb2HevBOyWJNNscZT4he-o7GoBatfu4JUsF7RbsZc-sfsx4DeSfdvAuOdR4upHw64QEjNugDXte94pNy0jkRMpKA__);
+    background-size: cover;
+    background-position: center -35px;
+    background-repeat: no-repeat;
+    top: 45%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.howto-write{
+    width:30%;
 }

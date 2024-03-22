@@ -152,16 +152,25 @@ tl.to(three,{
 // })
 
 // animation for what section
-
+const heroY = document.querySelector('.hero').getBoundingClientRect().height;
+const heroX = document.querySelector('.hero').getBoundingClientRect().width;
 let tl2 = gsap.timeline({
     scrollTrigger:{
         trigger:'#what',
         start:'top 50%',
         end: 'bottom 50%',
         duration:.5,
-        // toggleActions:"play reset play reset"
+        toggleActions:"play none play reverse"
     }
 });
+tl2.to('.red-circle',{
+    y:heroY,
+    x:heroX,
+},'simultaneously')
+tl2.to('.black-circle',{
+    y:heroY,
+    x:-heroX-250,
+},'simultaneously')
 tl2.from('.desc',{
     x:'-250%',
     ease: "elastic.out(.2,0.3)",
@@ -172,21 +181,67 @@ tl2.from('.image-container',{
 },'simultaneously');
 
 //animation for features section
+const featX= document.getElementById('features').getBoundingClientRect().width;
+const featY= document.getElementById('features').getBoundingClientRect().top;
 let tl3 = gsap.timeline({
     scrollTrigger:{
         trigger: "#features",
-        start: "top 50%",
+        start: "top 60%",
         // end: "bottom 50%",
         // markers: true,
-        // toggleActions: 'play reset play reset'
+        toggleActions: 'play none play reverse'
       }
 })
-
+tl3.to('.black-circle',{
+    y:featY-(featY/2),
+    x:-featX-'100px',
+},'simultaneously')
+tl3.to('.red-circle',{
+    y:featY-100,
+    x:featX-'50px',
+},'simultaneously')
 circles.forEach((circle,i)=>{
     tl3.from(circle,{
         left:'150%',
         duration:.2,
-        ease: "elastic.out(0.5,0.3)",
+        ease: "power1",
         stagger:0.2,
     })
+});
+// animation for how to section
+const howtoX = document.getElementById('howto').getBoundingClientRect().width;
+const howtoY = document.getElementById('howto').getBoundingClientRect().top;
+
+let tl4 = gsap.timeline({
+    scrollTrigger:{
+        trigger: "#howto",
+        start: "top 60%",
+        // end: "bottom 50%",
+        // markers: true,
+        toggleActions: 'play none play reverse'
+      }
 })
+tl4.to('.black-circle',{
+    y: '+=700',
+    x: '-105vw',
+},'simultaneously')
+tl4.to('.red-circle',{
+    y:'+=500',
+    x:'90vw',
+},'simultaneously')
+let navbar = document.querySelector('nav');
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+    // navbar.style.height = '10vh';
+    navbar.classList.add('active');
+    document.querySelector(".logo").classList.add('active');
+  } else {
+    // navbar.style.padding = "80px 10px";
+    
+    navbar.classList.remove('active');
+    document.querySelector(".logo").classList.remove('active');
+  }
+}
