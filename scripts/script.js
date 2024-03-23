@@ -207,18 +207,19 @@ phone.addEventListener('click',function(){
     count++;
     console.log(count);
     phoneAnim.to(phoneImg,{
-        backgroundPosition:'-250px -35px',
+        backgroundPosition:'-300px -35px',
         duration:.3,
         ease:'none'
     })
  
     phoneAnim.to(phoneImg,{
         backgroundPosition:'1px -35px',
-        duration:.5,
+        duration:.3,
+        ease:'none',
     })
-    if(count == 1){
-        phon
-    }
+    // if(count == 1){
+    //     phon
+    // }
 })
 //testimonials animation
 let testiAnim = gsap.timeline({

@@ -64,7 +64,7 @@ nav.active{
     height: 100px;
     /* display: grid;
     place-items: center; */
-    margin-left:10% ;
+    margin-left:7.5% ;
     /* padding-top:1rem; */
     transition: .3s ease;
     position: relative;
@@ -83,7 +83,7 @@ nav.active{
 }
 
 .dots{
-    margin-right:10%;
+    margin-right:7.5%;
     cursor: pointer;
     transition: .2s ease;
 }
@@ -131,54 +131,9 @@ section{
     left:150%;
     z-index: 0;
     top:20%;
-    /* animation: slideLeft 1 forwards 1s; */
-    /* transform: rotateY(180deg);    */
-    
 }
 
 
-/* @keyframes slideLeft {
-    0%{
-        left:200%;
-        opacity: 0;
-    }
-    80%{
-        left:18%;
-    }
-    90%{
-        left:25%;
-        opacity: .5;
-    }
-    98%{
-        left:23%;
-        opacity: .8;
-    }
-    100%{
-        left:25%;
-        opacity: 1;
-    }
-}
-@keyframes slideRight {
-    0%{
-        left:-200%;
-        opacity: 0;
-    }
-    80%{
-        left:20%;
-    }
-    90%{
-        left:10%;
-        opacity: .5;
-    }
-    98%{
-        left:16%;
-        
-    }
-    100%{
-        left:15%;
-        opacity: 1;
-    }
-} */
 @keyframes fadeIn {
     0%{
         opacity: 0;
@@ -362,13 +317,15 @@ opacity: 1;
 }
 #howto h2{
     font-size: 5rem;
+    margin-left:4%;
 }
 #howto h4{
     font-size: 2rem;
     /* position: relative; */
     position: absolute;
-    top:15%;
-    width:40%;
+    top:4%;
+    width:35%;
+    margin-left: 4%;
 }
 #howto h4:nth-of-type(2){
 left:-100%
@@ -377,6 +334,8 @@ left:-100%
     color:black;
     position:absolute;
     top:50%;
+    /* right:15%; */
+    transform: translate(15%,-50%);
 }
 #howto p:nth-of-type(2){
     left:150%;
@@ -393,8 +352,9 @@ left:-100%
 }
 .howto-img-wrapper{
     position: relative;
-    width:85%;
-    margin: 5rem auto auto;
+    /* width:90%; */
+    /* margin:10% auto auto; */
+    margin-top:8%;
 }
 
 .howto-img-container{
