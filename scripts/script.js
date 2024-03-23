@@ -197,5 +197,47 @@ tl4.from('.howto-img-container',{
     ease: "elastic.out(.2,0.3)",
 })
 
-const phone= document.querySelector('.howto-img-container');
+const phone= document.querySelector('.howto-img-wrapper');
+const phoneImg =document.querySelector('.howto-inner-img');
+// var rule = CSSRulePlugin.getRule('.howto-img-wrapper::before');
+let phoneAnim = gsap.timeline();
+let count = 0;
+phone.addEventListener('click',function(){
+    
+    count++;
+    console.log(count);
+    phoneAnim.to(phoneImg,{
+        backgroundPosition:'-250px -35px',
+        duration:.3,
+        ease:'none'
+    })
+ 
+    phoneAnim.to(phoneImg,{
+        backgroundPosition:'1px -35px',
+        duration:.5,
+    })
+    if(count == 1){
+        phon
+    }
+})
+//testimonials animation
+let testiAnim = gsap.timeline({
+    scrollTrigger:{
+        trigger:'#testimonials',
+        start:'top 50%',
+        toggleActions: 'play none play reverse'
+    }
+})
+testiAnim.to('.red-circle',{
+    x:20,
+    y:'+=800',
+    ease:'power1'
+},'simultaneously')
+testiAnim.to('.black-circle',{
+    x:-120,
+    y:'+=1300',
+    ease:'power1',
+    width:'+=350px',
+    height:'+=350px'
 
+},'simultaneously')
