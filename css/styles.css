@@ -213,7 +213,7 @@ section{
     padding: 1rem 0;
 }
 .desc h2{
-    font-size: 5rem;
+    font-size: 4rem;
     color:#D92728;
     line-height: 1;
     padding: 1rem 0;
@@ -268,6 +268,7 @@ position: absolute;
 top:50%;
 left:50%;
 transform: translate(-50%,-50%);
+/* padding:1rem; */
 color:black;
 
 }
@@ -316,7 +317,7 @@ opacity: 1;
     transition: .3s ease;
 }
 #howto h2{
-    font-size: 5rem;
+    font-size: 4rem;
     margin-left:4%;
 }
 #howto h4{
@@ -352,7 +353,7 @@ left:-100%
 }
 .howto-img-wrapper{
     position: relative;
-    /* width:90%; */
+    width:85%;
     /* margin:10% auto auto; */
     margin-top:8%;
 }
@@ -384,7 +385,7 @@ left:-100%
 
 #testimonials h2{
     text-align: left;
-    font-size: 5rem;
+    font-size: 4rem;
     margin-bottom:-10px;
 }
 .testimonials-wrapper{
