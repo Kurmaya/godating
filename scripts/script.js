@@ -108,7 +108,7 @@ tl.to(three,{
 })
 
 // animation for what section
-const heroY = document.querySelector('.hero').getBoundingClientRect().height;
+const heroY = document.querySelector('.what-container').getBoundingClientRect().height;
 const heroX = document.querySelector('.hero').getBoundingClientRect().width;
 let tl2 = gsap.timeline({
     scrollTrigger:{
@@ -120,12 +120,14 @@ let tl2 = gsap.timeline({
     }
 });
 tl2.to('.red-circle',{
-    y:heroY,
-    x:heroX,
+    y:heroY+100,
+    // x:heroX,
 },'simultaneously')
 tl2.to('.black-circle',{
     y:heroY,
-    x:-heroX-250,
+    width:'300px',
+    height:'500px',
+    x:600,
 },'simultaneously')
 tl2.from('.desc',{
     x:'-250%',
@@ -149,12 +151,12 @@ let tl3 = gsap.timeline({
       }
 })
 tl3.to('.black-circle',{
-    y:featY-(featY/2),
-    x:-featX-'100px',
+    y:'+=80vh',
+    // x:-featX-'100px',
 },'simultaneously')
 tl3.to('.red-circle',{
-    y:featY-100,
-    x:featX-'50px',
+    y:featY-90,
+    // x:featX-'50px',
 },'simultaneously')
 circles.forEach((circle,i)=>{
     tl3.from(circle,{
@@ -163,7 +165,7 @@ circles.forEach((circle,i)=>{
         ease: "power1",
         // stagger:0.05,
     })
-});
+},'simultaneously');
 // animation for how to section
 const howtoX = document.getElementById('howto').getBoundingClientRect().width;
 const howtoY = document.getElementById('howto').getBoundingClientRect().top;
@@ -183,12 +185,14 @@ tl4.from('#howto h2',{
     ease: "elastic.out(.2,0.3)",
 })
 tl4.to('.black-circle',{
-    y: '+=700',
-    x: '-110vw',
+    y: '+=100vh',
+    width:'600px',
+    height:'400px'
+    // x: '-110vw',
 },'simultaneously')
 tl4.to('.red-circle',{
     y:'+=700',
-    x:'105vw',
+    // x:'105vw',
 },'simultaneously')
 
 tl4.from('.howto-img-container',{
@@ -222,6 +226,7 @@ phone.addEventListener('click',function(){
     // }
 })
 //testimonials animation
+const cards = document.querySelectorAll('.card');
 let testiAnim = gsap.timeline({
     scrollTrigger:{
         trigger:'#testimonials',
@@ -235,10 +240,74 @@ testiAnim.to('.red-circle',{
     ease:'power1'
 },'simultaneously')
 testiAnim.to('.black-circle',{
-    x:-120,
-    y:'+=1300',
+    // x:-120,
+    y:'+=80vh',
     ease:'power1',
     width:'+=350px',
-    height:'+=350px'
+    height:'+=550px'
 
 },'simultaneously')
+
+cards.forEach((card,i)=>{
+    testiAnim.to(card,{
+        scale:1,
+        duration:.1,
+        ease: "power1",
+        // stagger:0.05,
+    })
+},'simultaneously');
+
+let getAnim = gsap.timeline({
+    scrollTrigger:{
+        trigger:'#getApp',
+        start:'top 50%',
+        toggleActions: 'play none play reverse'
+    }
+})
+
+getAnim.to('.red-circle',{
+    y:'+=90vh',
+    ease:'none'
+},'simultaneously')
+getAnim.to('.black-circle',{
+    y:'+=90vh',
+    ease:'none'
+},'simultaneously')
+getAnim.from('.getApp-wrapper',{
+    opacity:0,
+    y:500,
+    duration:.3,
+    ease: "elastic.out(.6,0.4)",
+})
+
+let aboutAnim = gsap.timeline({
+    scrollTrigger:{
+        trigger:'#about',
+        start:'top 50%',
+        toggleActions: 'play none play reverse'
+    }
+})
+
+aboutAnim.to('.red-circle',{
+    y:'+=100vh',
+    ease:'none'
+},'simultaneously')
+aboutAnim.to('.black-circle',{
+    y:'+=135vh',
+    // top:'200%',
+    width:'350px',
+    height:'280px',
+    borderRadius:'50% 50% 0 50%',
+    ease:'power1'
+},'simultaneously')
+aboutAnim.to('.red-circle',{
+    left:'-2%',
+    y:'-=45vh',
+    width:'100vw',
+    height:'90vh',
+    borderRadius:'50% 50% 0 0',
+    ease: "elastic.out(.6,0.4)",
+    duration:.6,
+    delay:.3,
+})
+const black = document.querySelector('.black-circle');
