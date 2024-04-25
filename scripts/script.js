@@ -16,7 +16,15 @@ function scrollFunction() {
   }
 }
 
-
+const feats = document.querySelectorAll('.feat');
+feats.forEach(feat => {
+    feat.addEventListener('mouseover',(e)=>{
+        feat.querySelector('h3').classList.add('active');
+    })
+    feat.addEventListener('mouseleave',(e)=>{
+        feat.querySelector('h3').classList.remove('active');
+    })
+});
 const one = document.querySelector('.head-one'),
 two =document.querySelector('.head-two'),
 three =document.querySelector('.head-three'),
@@ -225,6 +233,38 @@ phone.addEventListener('click',function(){
     //     phon
     // }
 })
+//faq animation
+let faqAnim = gsap.timeline({
+    scrollTrigger:{
+        trigger:'#faq',
+        start:'top 50%',
+        toggleActions: 'play none play reverse'
+    }
+})
+faqAnim.to('.red-circle',{
+    x:20,
+    y:'+=800',
+    ease:'power1'
+},'simultaneously')
+faqAnim.to('.black-circle',{
+    // x:-120,
+    y:'+=80vh',
+    ease:'power1',
+    width:'+=350px',
+    height:'+=550px'
+
+},'simultaneously')
+faqAnim.from('.faq-img-holder',{
+    x:-1500,
+    duration:.3,
+    ease: "elastic.out(.6,0.4)",
+})
+faqAnim.from('.faqs',{
+    x:1500,
+    duration:.3,
+    ease: "elastic.out(.6,0.4)",
+})
+
 //testimonials animation
 const cards = document.querySelectorAll('.card');
 let testiAnim = gsap.timeline({
@@ -302,7 +342,7 @@ aboutAnim.to('.black-circle',{
 },'simultaneously')
 aboutAnim.to('.red-circle',{
     left:'-2%',
-    y:'-=45vh',
+    y:'-=52vh',
     width:'100vw',
     height:'90vh',
     borderRadius:'50% 50% 0 0',
