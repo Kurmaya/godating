@@ -128,11 +128,11 @@ let tl2 = gsap.timeline({
     }
 });
 tl2.to('.red-circle',{
-    y:heroY+100,
+    y:'+=110vh',
     // x:heroX,
 },'simultaneously')
 tl2.to('.black-circle',{
-    y:heroY,
+    y:'+=80vh',
     width:'300px',
     height:'500px',
     x:600,
@@ -159,11 +159,11 @@ let tl3 = gsap.timeline({
       }
 })
 tl3.to('.black-circle',{
-    y:'+=80vh',
+    y:'+=110vh',
     // x:-featX-'100px',
 },'simultaneously')
 tl3.to('.red-circle',{
-    y:featY-90,
+    y:'+=110vh',
     // x:featX-'50px',
 },'simultaneously')
 circles.forEach((circle,i)=>{
@@ -193,13 +193,13 @@ tl4.from('#howto h2',{
     ease: "elastic.out(.2,0.3)",
 })
 tl4.to('.black-circle',{
-    y: '+=100vh',
+    y: '+=90vh',
     width:'600px',
     height:'400px'
     // x: '-110vw',
 },'simultaneously')
 tl4.to('.red-circle',{
-    y:'+=700',
+    y:'+=80vh',
     // x:'105vw',
 },'simultaneously')
 
@@ -276,17 +276,22 @@ let testiAnim = gsap.timeline({
 })
 testiAnim.to('.red-circle',{
     x:20,
-    y:'+=800',
+    y:'+=100vh',
     ease:'power1'
 },'simultaneously')
 testiAnim.to('.black-circle',{
     // x:-120,
-    y:'+=80vh',
+    y:'+=120vh',
     ease:'power1',
-    width:'+=350px',
-    height:'+=550px'
+    width:'350px',
+    height:'550px'
 
 },'simultaneously')
+testiAnim.to('.download',{
+    opacity:1,
+    duration:.2,
+    ease:'none',
+})
 
 cards.forEach((card,i)=>{
     testiAnim.to(card,{
@@ -310,9 +315,14 @@ getAnim.to('.red-circle',{
     ease:'none'
 },'simultaneously')
 getAnim.to('.black-circle',{
-    y:'+=90vh',
+    y:'+=110vh',
     ease:'none'
 },'simultaneously')
+getAnim.to('.download',{
+    opacity:0,
+    duration:.2,
+    ease:'none',
+})
 getAnim.from('.getApp-wrapper',{
     opacity:0,
     y:500,
@@ -329,25 +339,52 @@ let aboutAnim = gsap.timeline({
 })
 
 aboutAnim.to('.red-circle',{
-    y:'+=100vh',
+    y:'+=110vh',
     ease:'none'
 },'simultaneously')
 aboutAnim.to('.black-circle',{
-    y:'+=135vh',
+    y:'+=85vh',
     // top:'200%',
     width:'350px',
     height:'280px',
     borderRadius:'50% 50% 0 50%',
     ease:'power1'
 },'simultaneously')
+aboutAnim.to('.download',{
+    opacity:1,
+    duration:.2,
+    ease:'none',
+})
 aboutAnim.to('.red-circle',{
     left:'-2%',
     y:'-=52vh',
     width:'100vw',
-    height:'90vh',
-    borderRadius:'50% 50% 0 0',
+    height:'85vh',
+    borderRadius:'50% 50% 5% 5%',
     ease: "elastic.out(.6,0.4)",
     duration:.6,
     delay:.3,
 })
 const black = document.querySelector('.black-circle');
+const scrolls = document.querySelectorAll('.scroll');
+
+const scrollAmt = window.innerHeight+window.innerHeight/10;
+    scrolls[0].addEventListener('click',()=>{
+        
+        window.scrollBy(0,scrollAmt);
+    })
+
+for(let i=1;i<scrolls.length;i++){
+    scrolls[i].addEventListener('click',()=>{
+        window.scrollBy(0,window.innerHeight);
+    })
+}
+
+scrolls.forEach(scroll=>{
+    scroll.addEventListener('mouseover',()=>{
+        scroll.querySelector('img').classList.add('active');
+    })
+    scroll.addEventListener('mouseleave',()=>{
+        scroll.querySelector('img').classList.remove('active');
+    })
+})
