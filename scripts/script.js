@@ -323,6 +323,12 @@ getAnim.to('.download',{
     duration:.2,
     ease:'none',
 })
+getAnim.from('#getApp h2',{
+    opacity:0,
+    y:500,
+    duration:.3,
+    ease: "elastic.out(.6,0.4)",
+})
 getAnim.from('.getApp-wrapper',{
     opacity:0,
     y:500,
@@ -343,7 +349,7 @@ aboutAnim.to('.red-circle',{
     ease:'none'
 },'simultaneously')
 aboutAnim.to('.black-circle',{
-    y:'+=85vh',
+    y:'+=95vh',
     // top:'200%',
     width:'350px',
     height:'280px',
@@ -360,7 +366,7 @@ aboutAnim.to('.red-circle',{
     y:'-=52vh',
     width:'100vw',
     height:'85vh',
-    borderRadius:'50% 50% 5% 5%',
+    borderRadius:'50% 50% 0 0',
     ease: "elastic.out(.6,0.4)",
     duration:.6,
     delay:.3,
