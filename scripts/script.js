@@ -35,6 +35,7 @@ iHolder =document.querySelector('.img-holder');
 const circles = document.querySelectorAll('.feat');
 const drop = document.querySelector('.dots');
 const close = document.querySelector('.close');
+const mages = document.querySelectorAll('.hero .img-holder img');
 drop.addEventListener('click',function(){
     document.querySelector('.nav-drop').classList.add('active');
     drop.style.opacity='0';
@@ -49,18 +50,18 @@ gsap.registerPlugin(ScrollTrigger);
 
 //hero section animation
 let tl = gsap.timeline({repeat:-1});
-tl.to(iHolder,{
-    left: '45%',
+tl.to(mages[0],{
+    left: '0',
     duration:1,
     ease: "elastic.out(.2,0.3)",
 },'simultaneously')
 tl.to(one,{
-    left:'15%',
+    left:'10%',
     duration:.5,
     ease: "elastic.out(.2,0.3)",
 },'simultaneously')
-tl.to(iHolder,{
-    left:'125%',
+tl.to(mages[0],{
+    left:'200%',
     duration:.2,
     delay:3,
 })
@@ -71,41 +72,40 @@ tl.to(one,{
 tl.to(iTwo,{
     zIndex:'5',
 })
-tl.to(iHolder,{
-    left: '45%',
+tl.to(mages[1],{
+    left: '0',
     duration:.8,
     ease: "elastic.out(.2,0.3)",
 })
 tl.to(two,{
-    left:'15%',
+    left:'10%',
     duration:.5,
     ease: "elastic.out(.2,0.3)",
 })
-tl.to(iHolder,{
-    left:'125%',
+tl.to(mages[1],{
+    left:'200%',
     duration:.2,
     delay:2,
 })
 tl.to(two,{
     left:'-200%',
-    duration:.2,
-    
+    duration:.2, 
 })
 tl.to(iThree,{
     zIndex:'5',
 })
-tl.to(iHolder,{
-    left: '45%',
+tl.to(mages[2],{
+    left: '0',
     duration:.8,
     ease: "elastic.out(.2,0.3)",
 })
 tl.to(three,{
-    left:'15%',
+    left:'10%',
     duration:.3,
     ease: "elastic.out(.2,0.3)",
 })
-tl.to(iHolder,{
-    left: '125%',
+tl.to(mages[2],{
+    left: '200%',
     duration:.2,
     delay:3,
 })
@@ -118,11 +118,11 @@ tl.to(three,{
 // animation for what section
 const heroY = document.querySelector('.what-container').getBoundingClientRect().height;
 const heroX = document.querySelector('.hero').getBoundingClientRect().width;
+const sections = document.querySelectorAll('section');
 let tl2 = gsap.timeline({
     scrollTrigger:{
         trigger:'#what',
         start:'top 50%',
-        end: 'bottom 50%',
         duration:.5,
         toggleActions:"play none play reverse"
     }
@@ -133,9 +133,9 @@ tl2.to('.red-circle',{
 },'simultaneously')
 tl2.to('.black-circle',{
     y:'+=80vh',
-    width:'300px',
+    width:'500px',
     height:'500px',
-    x:600,
+    left:'95%',
 },'simultaneously')
 tl2.from('.desc',{
     x:'-250%',
