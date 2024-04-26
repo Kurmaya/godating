@@ -54,12 +54,12 @@ tl.to(mages[0],{
     left: '0',
     duration:1,
     ease: "elastic.out(.2,0.3)",
-},'simultaneously')
+})
 tl.to(one,{
     left:'10%',
-    duration:.5,
+    duration:1,
     ease: "elastic.out(.2,0.3)",
-},'simultaneously')
+},'<')
 tl.to(mages[0],{
     left:'200%',
     duration:.2,
@@ -68,42 +68,40 @@ tl.to(mages[0],{
 tl.to(one,{
     left:'-200%',
     duration:.2,  
-})
-tl.to(iTwo,{
-    zIndex:'5',
-})
+},'<')
+
 tl.to(mages[1],{
     left: '0',
-    duration:.8,
+    duration:1,
     ease: "elastic.out(.2,0.3)",
 })
 tl.to(two,{
     left:'10%',
-    duration:.5,
+    duration:1,
     ease: "elastic.out(.2,0.3)",
-})
+},'<')
 tl.to(mages[1],{
     left:'200%',
     duration:.2,
-    delay:2,
+    delay:3,
 })
 tl.to(two,{
     left:'-200%',
     duration:.2, 
-})
-tl.to(iThree,{
-    zIndex:'5',
-})
+},'<')
+// tl.to(iThree,{
+//     zIndex:'5',
+// })
 tl.to(mages[2],{
     left: '0',
-    duration:.8,
+    duration:1,
     ease: "elastic.out(.2,0.3)",
 })
 tl.to(three,{
     left:'10%',
-    duration:.3,
+    duration:1,
     ease: "elastic.out(.2,0.3)",
-})
+},'<')
 tl.to(mages[2],{
     left: '200%',
     duration:.2,
@@ -113,7 +111,7 @@ tl.to(three,{
     left:'-200%',
     duration:.2,
     
-})
+},'<')
 
 // animation for what section
 const heroY = document.querySelector('.what-container').getBoundingClientRect().height;

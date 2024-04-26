@@ -565,9 +565,10 @@ opacity: 0;
 .answer p{
     color: white !important;
     position: relative;
-    top: 25px;
+    /* top: 25px; */
     padding: 2rem 20px;
     line-height: 1.5;
+    text-align: left;
 }
 .faq-img-holder img{
     
