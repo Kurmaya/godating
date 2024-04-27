@@ -185,25 +185,26 @@ let tl4 = gsap.timeline({
         toggleActions: 'play none play reverse'
       }
 })
-tl4.from('#howto h2',{
-    x:'-100vw',
-    opacity:0,
-    ease: "elastic.out(.2,0.3)",
-})
+
 tl4.to('.black-circle',{
-    y: '+=90vh',
+    y: '+=95vh',
     width:'600px',
     height:'400px'
     // x: '-110vw',
 },'simultaneously')
 tl4.to('.red-circle',{
-    y:'+=80vh',
+    y:'+=90vh',
     // x:'105vw',
 },'simultaneously')
 tl4.from('#howto h2',{
-    left:'-=100vw',
-    ease: "elastic.out(.4,0.6)",
-},'<')
+    x:'-100vw',
+    opacity:0,
+    ease: "elastic.out(.2,0.3)",
+})
+// tl4.from('#howto h2',{
+//     left:'-=100vw',
+//     ease: "elastic.out(.4,0.6)",
+// },'<')
 tl4.from('#howto h4',{
     left:'-=100vw',
     ease: "elastic.out(.4,0.6)",
@@ -361,10 +362,10 @@ aboutAnim.to('.red-circle',{
     ease:'none'
 },'simultaneously')
 aboutAnim.to('.black-circle',{
-    y:'+=90vh',
+    y:'+=87vh',
     // top:'200%',
     width:'350px',
-    height:'280px',
+    height:'295px',
     borderRadius:'50% 50% 0 50%',
     zIndex:'10',
     ease:'power1'
@@ -386,7 +387,9 @@ aboutAnim.to('.download',{
 // })
 aboutAnim.to('.red-circle',{
     opacity:0,
-    x:'+=500px',
+    x:'+=50vw',
+    y:'-=25vh',
+    duration:.5,
     height:'0',
 })
 aboutAnim.to('.about',{
