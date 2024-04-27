@@ -40,6 +40,7 @@ nav.active{
 .nav-holder{
     position: relative;
     width:85%;
+    max-width: 2040px;
     display: flex;
     margin:auto;
     justify-content: space-between;
@@ -56,13 +57,13 @@ nav.active{
 }
 .download{
     width:300px;
-    height:200px;
+    height:250px;
     border-radius: 50%;
     background:#d62728;
     text-align: center;
     position: fixed;
-    top:-5%;
-    right:-4%;
+    top:-80px;
+    right:-50px;
     z-index: 1000;
     display: grid;
     place-items:center;
@@ -74,9 +75,9 @@ nav.active{
 .download h3{
     color: white;
     position: relative;
-    top: 25%;
-    left: -15px;
-    font-size: 1.5rem;
+    top: 70px;
+    left: -5px;
+    font-size: 1.35rem;
 }
 .download:hover{
     transform: translateY(5px) scale(1.05);
@@ -140,6 +141,7 @@ h1, h2,h3,h4,p{
 }
 section{
     width:85%;
+    max-width: 2040px;
     height: 100vh;
     margin: 0 auto;
     position: relative;
@@ -164,6 +166,9 @@ section{
 .hero-wrapper .scroll{
     top:70%!important;
 }
+#testimonials .scroll{
+    left:97%;
+}
 .empty{
     width:37%;
     height: 70%;
@@ -185,9 +190,9 @@ section{
 }
 .hero .img-holder{
     width: 65%;
-    max-width: 800px;
+    max-width: 950px;
     height: 75%;
-    max-height: 650px;
+    max-height: 500px;
     position: relative;
     /* left:40%; */
     z-index: 0;
@@ -722,8 +727,10 @@ background: #D92728;
 }
 .card{
     background: #9A1D20;
-    width:250px;
+    width:280px;
+    max-width:350px;
     height:430px;
+    max-height:470px;
     border-radius: 25px;
     display: flex;
     flex-direction: column;

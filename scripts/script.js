@@ -385,18 +385,20 @@ aboutAnim.to('.download',{
 //     delay:.3,
 // })
 aboutAnim.to('.red-circle',{
-    display:'none'
+    opacity:0,
+    x:'+=500px',
+    height:'0',
 })
 aboutAnim.to('.about',{
     width:'120%',
-    height:'180%',
+    height:'175%',
     background:'#D92728',
     borderRadius:'50% 50% 50% 50%',
-    ease: "elastic.out(.6,0.4)",
-    duration:.3,
+    ease: "elastic.out(.7,0.4)",
+    duration:.5,
     zIndex:'-1'
 
-})
+},'<')
 
 const black = document.querySelector('.black-circle');
 const scrolls = document.querySelectorAll('.scroll');
