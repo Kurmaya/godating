@@ -177,7 +177,9 @@ section{
 
 .empty h1{
     width:85%;
-    top:25%;
+    max-width: 500px;
+    top:50%;
+    transform: translateY(-50%);
     font-size: 4rem;
     letter-spacing: 2px;
     color:#D92728;
@@ -190,9 +192,9 @@ section{
 }
 .hero .img-holder{
     width: 65%;
-    max-width: 950px;
+    max-width: 1300px;
     height: 75%;
-    max-height: 500px;
+    max-height: 578px;
     position: relative;
     /* left:40%; */
     z-index: 0;
@@ -257,7 +259,7 @@ section{
     width:400px;
     height:400px;
     background-color:#d62728;
-    left:-21%;
+    left:-300px;
     top:70%;
 }
 .black-circle{
