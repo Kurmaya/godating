@@ -56,7 +56,7 @@ tl.to(mages[0],{
     ease: "elastic.out(.2,0.3)",
 })
 tl.to(one,{
-    left:'10%',
+    left:'0',
     duration:1,
     ease: "elastic.out(.2,0.3)",
 },'<')
@@ -76,7 +76,7 @@ tl.to(mages[1],{
     ease: "elastic.out(.2,0.3)",
 })
 tl.to(two,{
-    left:'10%',
+    left:'0',
     duration:1,
     ease: "elastic.out(.2,0.3)",
 },'<')
@@ -98,7 +98,7 @@ tl.to(mages[2],{
     ease: "elastic.out(.2,0.3)",
 })
 tl.to(three,{
-    left:'10%',
+    left:'0',
     duration:1,
     ease: "elastic.out(.2,0.3)",
 },'<')
@@ -200,37 +200,51 @@ tl4.to('.red-circle',{
     y:'+=80vh',
     // x:'105vw',
 },'simultaneously')
-
+tl4.from('#howto h2',{
+    left:'-=100vw',
+    ease: "elastic.out(.4,0.6)",
+},'<')
+tl4.from('#howto h4',{
+    left:'-=100vw',
+    ease: "elastic.out(.4,0.6)",
+},'+=.1')
+tl4.from('#howto button',{
+    x:'150vw',
+    opacity:0,
+    ease: "elastic.out(.4,0.6)",
+},'+=.1')
 tl4.from('.howto-img-container',{
     y:'200vh',
     opacity:0,
-    ease: "elastic.out(.2,0.3)",
-})
+    ease: "elastic.out(.4,0.6)",
+},'<')
+
+
+
 
 const phone= document.querySelector('.howto-img-wrapper');
 const phoneImg =document.querySelector('.howto-inner-img');
 // var rule = CSSRulePlugin.getRule('.howto-img-wrapper::before');
 let phoneAnim = gsap.timeline();
 let count = 0;
-phone.addEventListener('click',function(){
+
+// phone.addEventListener('click',function(){
     
-    count++;
-    console.log(count);
-    phoneAnim.to(phoneImg,{
-        backgroundPosition:'-300px -35px',
-        duration:.3,
-        ease:'none'
-    })
+//     count++;
+//     console.log(count);
+//     phoneAnim.to(phoneImg,{
+//         backgroundPosition:'-300px -35px',
+//         duration:.3,
+//         ease:'none'
+//     })
  
-    phoneAnim.to(phoneImg,{
-        backgroundPosition:'1px -35px',
-        duration:.3,
-        ease:'none',
-    })
-    // if(count == 1){
-    //     phon
-    // }
-})
+//     phoneAnim.to(phoneImg,{
+//         backgroundPosition:'1px -35px',
+//         duration:.3,
+//         ease:'none',
+//     })
+    
+// })
 //faq animation
 let faqAnim = gsap.timeline({
     scrollTrigger:{
@@ -317,7 +331,7 @@ getAnim.to('.black-circle',{
     ease:'none'
 },'simultaneously')
 getAnim.to('.download',{
-    opacity:0,
+    display:'none',
     duration:.2,
     ease:'none',
 })
@@ -347,28 +361,43 @@ aboutAnim.to('.red-circle',{
     ease:'none'
 },'simultaneously')
 aboutAnim.to('.black-circle',{
-    y:'+=95vh',
+    y:'+=90vh',
     // top:'200%',
     width:'350px',
     height:'280px',
     borderRadius:'50% 50% 0 50%',
+    zIndex:'10',
     ease:'power1'
 },'simultaneously')
 aboutAnim.to('.download',{
-    opacity:1,
+    display:'grid',
     duration:.2,
     ease:'none',
 })
+// aboutAnim.to('.red-circle',{
+//     left:'-2%',
+//     y:'-=52vh',
+//     width:'100vw',
+//     height:'85vh',
+//     borderRadius:'50% 50% 0 0',
+//     ease: "elastic.out(.6,0.4)",
+//     duration:.6,
+//     delay:.3,
+// })
 aboutAnim.to('.red-circle',{
-    left:'-2%',
-    y:'-=52vh',
-    width:'100vw',
-    height:'85vh',
-    borderRadius:'50% 50% 0 0',
-    ease: "elastic.out(.6,0.4)",
-    duration:.6,
-    delay:.3,
+    display:'none'
 })
+aboutAnim.to('.about',{
+    width:'120%',
+    height:'180%',
+    background:'#D92728',
+    borderRadius:'50% 50% 50% 50%',
+    ease: "elastic.out(.6,0.4)",
+    duration:.3,
+    zIndex:'-1'
+
+})
+
 const black = document.querySelector('.black-circle');
 const scrolls = document.querySelectorAll('.scroll');
 
