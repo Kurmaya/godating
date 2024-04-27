@@ -855,9 +855,11 @@ max-width:200px;
 }
 .about-desc{
     position: relative;
-    top:150px;
-    width:70%;
+    top:180px;
+    width:68%;
     margin: auto;
+    
+    
 }
 #about p{
     color:white;
