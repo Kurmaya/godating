@@ -284,7 +284,7 @@ section{
     padding: 1rem 0;
 }
 .desc h2{
-    font-size: 4rem;
+    /* font-size: 4rem; */
     color:#D92728;
     line-height: 1;
     padding: 1rem 0;
@@ -909,6 +909,7 @@ max-width:200px;
         width: 90%;
         height: 100%;
         position: relative;
+        margin:100px auto;
     }
     #what{
         top:100px;
@@ -955,15 +956,14 @@ max-width:200px;
     }
     .mobile-hero-item:nth-of-type(3){
         position: relative;
-        top:150px;
+        margin-top:120px;
     }
     .mobile-hero-head h2{
-        
         margin-left:20px;
     }
     .mobile-hero-item:nth-of-type(2){
         position: relative;
-        top:100px;
+        margin-top:50px;
     }
     .mobile-hero-item:nth-of-type(2) img{
         left:-25%!important;
@@ -1004,21 +1004,55 @@ max-width:200px;
         display:none;
     }
 
-    /* faq section */
-    #faq h2{
-        top:20px;
-    }
-    .faq-wrapper{
-        flex-direction: column;
-        align-items: center;
-    }
-       #mobile-hero img:nth-of-type(1){
+    #mobile-hero img:nth-of-type(1){
         left:-60%;
         top:-150px;
         width:150%;
         /* transform: rotateY('180deg'); */
         object-position: 200px ;
     }
+    /* second section */
+    .what-container{
+        flex-direction: column-reverse;
+        width:100%;
+        align-items: center;
+        gap:20px;
+
+    }
+    .desc{
+        width:100%;
+    }
+    .desc p{
+        width:100%;
+        text-align: justify;
+    }
+    .image-container{
+        order:1;
+        width:100%;
+        height:100%;
+        max-width:520px;
+        max-height:520px;
+    }
+    .image-container > img{
+        position: relative;
+    }
+
+    /* features section */
+    #features h2{
+        top:0;
+    }
+    .feat-wrapper{
+        bottom:0;
+    }
+    /* faq section */
+    #faq h2{
+        top:0;
+    }
+    .faq-wrapper{
+        flex-direction: column;
+        align-items: center;
+    }
+    
     .faq-wrapper > .faq-img-holder{
         width:250px;
         order:4;
@@ -1032,5 +1066,10 @@ max-width:200px;
         width:20px;
         height: 20px;
         top:30%;
+    }
+    .see-more,.back{
+        width:40%;
+        left:52%;
+        position: relative;
     }
 }
