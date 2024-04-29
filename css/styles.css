@@ -909,8 +909,11 @@ max-width:200px;
         width: 90%;
         height: 100%;
         position: relative;
-        margin:100px auto;
+        /* margin:100px auto; */
     }
+    /* section:nth-of-type(n+2){
+        margin: 50px auto;
+    } */
     #what{
         top:100px;
     }
@@ -956,7 +959,7 @@ max-width:200px;
     }
     .mobile-hero-item:nth-of-type(3){
         position: relative;
-        margin-top:120px;
+        margin-top:50px;
     }
     .mobile-hero-head h2{
         margin-left:20px;
@@ -1038,13 +1041,106 @@ max-width:200px;
     }
 
     /* features section */
+    #features{
+        margin-top:150px;
+    }
     #features h2{
         top:0;
     }
     .feat-wrapper{
         bottom:0;
+        display: none;
+    }
+    .mobile-features-container{
+        width:100%;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .mobile-features-item{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        margin:30px auto;
+    }
+    .mobile-features-item:nth-of-type(even){
+        flex-direction: row-reverse;
+    }
+    .mobile-feat-img{
+        width:180px;
+        height:180px;
+        max-height: 300px;
+        max-width: 300px;
+        background: black;
+        display: grid;
+        place-items:center;
+        border-radius: 50%;
+        position: relative;
+    }
+    .mobile-feat-img>img{
+        position: absolute;
+        width:100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    .mobile-feat-desc{
+        width:50%;
+        display: grid;
+        place-items:center;
+        text-align: center;
+    }
+    .mobile-feat-desc h3{
+        width:80%;
+        font-size: 1.2rem;
+        line-height: 1;
+        padding:1rem;
+    }
+    .mobile-feat-desc p{
+        line-height: 1.2;
+        color:black;
+        text-align: justify;
+        font-family: 'Nexa-Extralight';
+        font-weight: bold;
+    }
+    /* howto section  */
+    #howto h2{
+        top:0;
+    }
+    #howto h4{
+        color:black;
+        font-size: 1.2rem;
+        margin:auto;
+    }
+    .howto-container{
+        top:0;
+    }
+    .howto-desc{
+        width: 100%;
+    }
+    .howto-img-container{
+        width:80%;
+        left:0;
+    }
+    .howto-write{
+        width: 100%;
+        bottom:0;
+    }
+    .howto-write a{
+        margin: auto;
+        display: grid;
+        place-items:center;
+        text-decoration: none;
+    }
+    .howto-write button{
+        width: 80%;
+        margin: auto;
     }
     /* faq section */
+    #faq{
+        margin-top:50px;
+    }
     #faq h2{
         top:0;
     }
@@ -1056,7 +1152,7 @@ max-width:200px;
     .faq-wrapper > .faq-img-holder{
         width:250px;
         order:4;
-        bottom:0;
+        bottom:100px;
         left:-20%;
     }
     .faqs{
@@ -1067,9 +1163,18 @@ max-width:200px;
         height: 20px;
         top:30%;
     }
+    .question{
+        position: relative;
+    }
+    .question h3{
+        font-size: 1rem;
+        left:45%;
+        width: 70%;
+        line-height: 1.1;
+    }
     .see-more,.back{
         width:40%;
-        left:52%;
+        left:58%;
         position: relative;
     }
 }
