@@ -89,9 +89,7 @@ tl.to(two,{
     left:'-200%',
     duration:.2, 
 },'<')
-// tl.to(iThree,{
-//     zIndex:'5',
-// })
+
 tl.to(mages[2],{
     left: '0',
     duration:1,
@@ -151,14 +149,11 @@ let tl3 = gsap.timeline({
     scrollTrigger:{
         trigger: "#features",
         start: "top 60%",
-        // end: "bottom 50%",
-        // markers: true,
         toggleActions: 'play none play reverse'
       }
 })
 tl3.to('.black-circle',{
     y:'+=110vh',
-    // x:-featX-'100px',
 },'simultaneously')
 tl3.to('.red-circle',{
     y:'+=110vh',
@@ -169,7 +164,7 @@ circles.forEach((circle,i)=>{
         left:'150%',
         duration:.1,
         ease: "power1",
-        // stagger:0.05,
+        stagger:0.05,
     })
 },'simultaneously');
 // animation for how to section
@@ -201,10 +196,7 @@ tl4.from('#howto h2',{
     opacity:0,
     ease: "elastic.out(.2,0.3)",
 })
-// tl4.from('#howto h2',{
-//     left:'-=100vw',
-//     ease: "elastic.out(.4,0.6)",
-// },'<')
+
 tl4.from('#howto h4',{
     left:'-=100vw',
     ease: "elastic.out(.4,0.6)",
@@ -225,27 +217,9 @@ tl4.from('.howto-img-container',{
 
 const phone= document.querySelector('.howto-img-wrapper');
 const phoneImg =document.querySelector('.howto-inner-img');
-// var rule = CSSRulePlugin.getRule('.howto-img-wrapper::before');
 let phoneAnim = gsap.timeline();
-let count = 0;
 
-// phone.addEventListener('click',function(){
-    
-//     count++;
-//     console.log(count);
-//     phoneAnim.to(phoneImg,{
-//         backgroundPosition:'-300px -35px',
-//         duration:.3,
-//         ease:'none'
-//     })
- 
-//     phoneAnim.to(phoneImg,{
-//         backgroundPosition:'1px -35px',
-//         duration:.3,
-//         ease:'none',
-//     })
-    
-// })
+
 //faq animation
 let faqAnim = gsap.timeline({
     scrollTrigger:{
@@ -273,9 +247,9 @@ faqAnim.from('.faq-img-holder',{
     ease: "elastic.out(.6,0.4)",
 })
 faqAnim.from('.faqs',{
-    x:1500,
+    x:1800,
     duration:.3,
-    ease: "elastic.out(.6,0.4)",
+    ease: "elastic.out(.3,0.2)",
 })
 
 //testimonials animation
