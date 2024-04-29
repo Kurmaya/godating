@@ -38,3 +38,25 @@ pluses.forEach(plus=>{
 //   window.scrollBy(0,window.innerHeight);
 //  }
 // });
+const scrolls = document.querySelectorAll('.scroll');
+
+const scrollAmt = window.innerHeight+window.innerHeight/10;
+    scrolls[0].addEventListener('click',()=>{
+        
+        window.scrollBy(0,scrollAmt);
+    })
+
+for(let i=1;i<scrolls.length;i++){
+    scrolls[i].addEventListener('click',()=>{
+        window.scrollBy(0,window.innerHeight);
+    })
+}
+
+scrolls.forEach(scroll=>{
+    scroll.addEventListener('mouseover',()=>{
+        scroll.querySelector('img').classList.add('active');
+    })
+    scroll.addEventListener('mouseleave',()=>{
+        scroll.querySelector('img').classList.remove('active');
+    })
+})

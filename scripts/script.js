@@ -36,6 +36,9 @@ const circles = document.querySelectorAll('.feat');
 const drop = document.querySelector('.dots');
 const close = document.querySelector('.close');
 const mages = document.querySelectorAll('.hero .img-holder img');
+const heroY = document.querySelector('.what-container').getBoundingClientRect().height;
+const heroX = document.querySelector('.hero').getBoundingClientRect().width;
+const sections = document.querySelectorAll('section');
 drop.addEventListener('click',function(){
     document.querySelector('.nav-drop').classList.add('active');
     drop.style.opacity='0';
@@ -47,8 +50,13 @@ close.addEventListener('click',function(){
     document.body.style.overflowY='scroll';
 })
 gsap.registerPlugin(ScrollTrigger);
+if(window.innerWidth<786){
+    document.querySelector('.dots img').src='./assets/images/mobile-hearts.png'
+}
 
-//hero section animation
+if(window.innerWidth>786){
+    
+    //hero section animation
 let tl = gsap.timeline({repeat:-1});
 tl.to(mages[0],{
     left: '0',
@@ -112,9 +120,7 @@ tl.to(three,{
 },'<')
 
 // animation for what section
-const heroY = document.querySelector('.what-container').getBoundingClientRect().height;
-const heroX = document.querySelector('.hero').getBoundingClientRect().width;
-const sections = document.querySelectorAll('section');
+
 let tl2 = gsap.timeline({
     scrollTrigger:{
         trigger:'#what',
@@ -143,8 +149,8 @@ tl2.from('.image-container',{
 },'simultaneously');
 
 //animation for features section
-const featX= document.getElementById('features').getBoundingClientRect().width;
-const featY= document.getElementById('features').getBoundingClientRect().top;
+// const featX= document.getElementById('features').getBoundingClientRect().width;
+// const featY= document.getElementById('features').getBoundingClientRect().top;
 let tl3 = gsap.timeline({
     scrollTrigger:{
         trigger: "#features",
@@ -168,8 +174,6 @@ circles.forEach((circle,i)=>{
     })
 },'simultaneously');
 // animation for how to section
-const howtoX = document.getElementById('howto').getBoundingClientRect().width;
-const howtoY = document.getElementById('howto').getBoundingClientRect().top;
 
 let tl4 = gsap.timeline({
     scrollTrigger:{
@@ -214,9 +218,6 @@ tl4.from('.howto-img-container',{
 
 
 
-
-const phone= document.querySelector('.howto-img-wrapper');
-const phoneImg =document.querySelector('.howto-inner-img');
 let phoneAnim = gsap.timeline();
 
 
@@ -349,16 +350,7 @@ aboutAnim.to('.download',{
     duration:.2,
     ease:'none',
 })
-// aboutAnim.to('.red-circle',{
-//     left:'-2%',
-//     y:'-=52vh',
-//     width:'100vw',
-//     height:'85vh',
-//     borderRadius:'50% 50% 0 0',
-//     ease: "elastic.out(.6,0.4)",
-//     duration:.6,
-//     delay:.3,
-// })
+
 aboutAnim.to('.red-circle',{
     opacity:0,
     x:'+=50vw',
@@ -376,27 +368,6 @@ aboutAnim.to('.about',{
     zIndex:'-1'
 
 },'<')
-
-const black = document.querySelector('.black-circle');
-const scrolls = document.querySelectorAll('.scroll');
-
-const scrollAmt = window.innerHeight+window.innerHeight/10;
-    scrolls[0].addEventListener('click',()=>{
-        
-        window.scrollBy(0,scrollAmt);
-    })
-
-for(let i=1;i<scrolls.length;i++){
-    scrolls[i].addEventListener('click',()=>{
-        window.scrollBy(0,window.innerHeight);
-    })
 }
 
-scrolls.forEach(scroll=>{
-    scroll.addEventListener('mouseover',()=>{
-        scroll.querySelector('img').classList.add('active');
-    })
-    scroll.addEventListener('mouseleave',()=>{
-        scroll.querySelector('img').classList.remove('active');
-    })
-})
+
