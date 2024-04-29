@@ -308,7 +308,7 @@ section{
     object-fit: contain;
 }
 #features h2{
-    font-size: 4rem;
+    /* font-size: 4rem; */
     position: relative;
     top:80px;
 }
@@ -406,7 +406,7 @@ opacity: 1;
     transition: .3s ease;
 }
 #howto h2{
-    font-size: 4rem;
+    /* font-size: 4rem; */
     /* margin-left:4%; */
     position: relative;
     top:80px;
@@ -508,7 +508,7 @@ left:-100%
  transition: .3s ease;
 }
 #faq h2{
-font-size: 4rem;
+/* font-size: 4rem; */
 position: relative;
 top:100px;
 line-height: 1.2;
@@ -703,7 +703,7 @@ transition: .3s ease;
 }
 #testimonials h2{
     text-align: left;
-    font-size: 4rem;
+    /* font-size: 4rem; */
     margin-bottom:-10px;
     position:relative;
     top:80px;
@@ -862,7 +862,7 @@ max-width:200px;
 }
 #about h2{
     color:white;
-    font-size: 3rem;
+    /* font-size: 4rem; */
     text-align: center;
     position: relative;
     top:15%;
@@ -880,6 +880,8 @@ max-width:200px;
     font-size: 1rem;
     line-height: 1.2;
     padding:.5rem 1rem;
+    font-family: 'Nexa-Extralight';
+    font-weight: bold;
 }
 .footer{
     display: flex;
@@ -904,8 +906,12 @@ max-width:200px;
         font-size: 2.5rem;
     }
     section{
-        width: 100%;
+        width: 90%;
         height: 100%;
+        position: relative;
+    }
+    #what{
+        top:100px;
     }
     #mobile-hero{
         display:block;
@@ -947,8 +953,13 @@ max-width:200px;
         bottom:120px;
         position: relative;
     }
+    .mobile-hero-item:nth-of-type(3){
+        position: relative;
+        top:150px;
+    }
     .mobile-hero-head h2{
-        width:60%;
+        
+        margin-left:20px;
     }
     .mobile-hero-item:nth-of-type(2){
         position: relative;
@@ -961,8 +972,8 @@ max-width:200px;
         /* transform: rotateY(180deg); */
         object-position: left!important;
     }
-    .mobile-hero-img-holder:nth-of-type(2) img {
-       
+    .mobile-hero-item:nth-of-type(3) img{
+        left:-40%!important;
     }
     .scroll{
         display:none!important;
@@ -991,5 +1002,35 @@ max-width:200px;
     }
     .download{
         display:none;
+    }
+
+    /* faq section */
+    #faq h2{
+        top:20px;
+    }
+    .faq-wrapper{
+        flex-direction: column;
+        align-items: center;
+    }
+       #mobile-hero img:nth-of-type(1){
+        left:-60%;
+        top:-150px;
+        width:150%;
+        /* transform: rotateY('180deg'); */
+        object-position: 200px ;
+    }
+    .faq-wrapper > .faq-img-holder{
+        width:250px;
+        order:4;
+        bottom:0;
+        left:-20%;
+    }
+    .faqs{
+        width:100%;
+    }
+    .plus{
+        width:20px;
+        height: 20px;
+        top:30%;
     }
 }
