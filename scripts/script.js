@@ -369,25 +369,150 @@ aboutAnim.to('.about',{
 
 },'<')
 }
+                //*mobile animations*
 
 if(window.innerWidth<786) {
-    let aboutAnim2 = gsap.timeline({
+    //features animation
+    const items = document.querySelectorAll('.mobile-features-item');
+    let featAnim2= gsap.timeline({
         scrollTrigger:{
-            trigger:'#about',
-            start:'top -550vh',
-            end:'bottom 50%',
-            // markers:true,
+            trigger:'#features',
+            start:'top 70%',
+            // makers:true,
             toggleActions: 'play none play reverse'
         }
     })
-    aboutAnim2.to('.about',{
-        width:'800px',
-        height:'1000px',
-        background:'#D92728',
-        borderRadius:'50% 50% 50% 50%',
+    featAnim2.from('#features h2',{
+        x:-1000,
+        duration:.4,
         ease: "elastic.out(.7,0.4)",
-        duration:1,
-        zIndex:'-1'
-    
+
     })
+    items.forEach((item,i)=>{
+        featAnim2.from(item,{
+            x:'150%',
+            duration:.2,
+            ease: "elastic.out(.4,0.3)",
+            stagger:0.05,
+        })
+    },'simultaneously');
+    //howto animation
+    let howtoAnim2= gsap.timeline({
+        scrollTrigger:{
+            trigger:'#howto',
+            start:'top 80%',
+            // makers:true,
+            toggleActions: 'play none play reverse'
+        }
+    })
+    howtoAnim2.from('#howto h2',{
+        x:-1000,
+        duration:.5,
+        ease: "elastic.out(.7,0.4)",
+    })
+    howtoAnim2.from('#howto h4',{
+        x:-1000,
+        duration:.5,
+        ease: "elastic.out(.7,0.4)",
+    },'-=.1')
+    howtoAnim2.from('.howto-img-container',{
+        x:1000,
+        duration:.5,
+        ease: "elastic.out(.7,0.4)",
+    },'-=.3')
+    howtoAnim2.from('.howto-write',{
+        x:1000,
+        duration:.5,
+        ease: "elastic.out(.7,0.4)",
+    },'<')
+    //faqs animation
+    let faqAnim2= gsap.timeline({
+        scrollTrigger:{
+            trigger:'#faq',
+            start:'top center',
+            // makers:true,
+            toggleActions: 'play none play reverse'
+        }
+    })
+    faqAnim2.from('#faq h2',{
+        x:-1000,
+        duration:.5,
+        ease: "elastic.out(.7,0.4)",
+    })
+    faqAnim2.from('.faq-wrapper',{
+        x:1000,
+        duration:.3,
+        ease: "elastic.out(.7,0.4)",
+    },'-=.1')
+    faqAnim2.from('.faq-img-holder',{
+        opacity:0,
+        duration:.5,
+        ease: "elastic.out(.7,0.4)",
+    })
+    //testimonials animation
+    let testiAnim2 = gsap.timeline({
+        scrollTrigger:{
+            trigger:'#testimonials',
+            start:'top center',
+            // makers:true,
+            toggleActions: 'play none play reverse'
+        }
+    })
+    testiAnim2.from('.testimonials-wrapper',{
+        left:1000,
+        duration:1,
+        ease: "elastic.out(.7,0.4)",
+    })
+    //getApp animation
+    let getAnim2 = gsap.timeline({
+        scrollTrigger:{
+            trigger:'#getApp',
+            start:'top 50%',
+            // makers:true,
+            toggleActions: 'play none play reverse'
+        }
+    })
+    getAnim2.from('#getApp h2',{
+        left:-1000,
+        ease: "elastic.out(.7,0.4)",
+        duration:.5,
+    })
+    getAnim2.from('#getApp h4',{
+        left:-1000,
+        ease: "elastic.out(.7,0.4)",
+        duration:.5,
+    },'-=.1')
+    getAnim2.from('.getApp-wrapper',{
+        y:500,
+        opacity:0,
+        ease: "elastic.out(.7,0.4)",
+        duration:.5,
+    },'-=.1')
+   
+    getAnim2.from('.getApp-bg',{
+        width:0,
+        height:0,
+        duration:.5,
+        ease: "elastic.out(.7,0.4)",
+    },'+=.2')
+   //about animation
+   let aboutAnim2 = gsap.timeline({
+    scrollTrigger:{
+        trigger:'#about',
+        start:'top 50%',
+        // end:'bottom 50%',
+        // markers:true,
+        toggleActions: 'play none play reverse'
+    }
+})
+aboutAnim2.to('.about',{
+    width:'800px',
+    height:'1000px',
+    background:'#D92728',
+    borderRadius:'50% 50% 50% 50%',
+    ease: "elastic.out(.7,0.4)",
+    duration:1,
+    zIndex:'-1'
+
+})
 }
