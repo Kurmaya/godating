@@ -1225,15 +1225,16 @@ max-width:200px;
         top:150px;
         position: relative;
         gap:0 30px;
+        padding-bottom:30px;
     }
     .mt{
         display:none;
     }
     .card{
         scale:1;
-        width:350px;
+        width:320px;
         /* max-width: 185px; */
-        height:400px;
+        height:380px;
     }
     .col:nth-of-type(even) > .card{
         background: #D92728;
