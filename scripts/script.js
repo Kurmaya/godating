@@ -372,6 +372,33 @@ aboutAnim.to('.about',{
                 //*mobile animations*
 
 if(window.innerWidth<786) {
+
+    //section two animation
+
+    let sectionTwoanim = gsap.timeline({
+        scrollTrigger:{
+            trigger:'#what',
+            start:'top 65%',
+            // makers:true,
+            toggleActions: 'play none play reverse'
+        }
+    })
+    sectionTwoanim.from('.image-container',{
+        y:500,
+        duration:.5,
+        ease: "elastic.out(.7,0.5)",
+    })
+    sectionTwoanim.from('#what h2',{
+        opacity:0,
+        duration:.5,
+        ease:'none'
+    },'-=.3')
+    sectionTwoanim.from('#what p',{
+        opacity:0,
+        duration:.5,
+        ease:'none'
+    },'-=.3')
+   
     //features animation
     const items = document.querySelectorAll('.mobile-features-item');
     let featAnim2= gsap.timeline({
@@ -391,9 +418,9 @@ if(window.innerWidth<786) {
     items.forEach((item,i)=>{
         featAnim2.from(item,{
             x:'150%',
-            duration:.2,
+            duration:.3,
             ease: "elastic.out(.4,0.3)",
-            stagger:0.05,
+            // stagger:0.05,
         })
     },'simultaneously');
     //howto animation
@@ -488,13 +515,19 @@ if(window.innerWidth<786) {
         ease: "elastic.out(.7,0.4)",
         duration:.5,
     },'-=.1')
+    getAnim2.from('.download-holder',{
+        // y:500,
+        opacity:0,
+        ease: "elastic.out(.7,0.4)",
+        duration:.5,
+    },'<')
    
     getAnim2.from('.getApp-bg',{
         width:0,
         height:0,
         duration:.5,
         ease: "elastic.out(.7,0.4)",
-    },'+=.2')
+    },'-=.5')
    //about animation
    let aboutAnim2 = gsap.timeline({
     scrollTrigger:{

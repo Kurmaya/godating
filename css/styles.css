@@ -1048,7 +1048,7 @@ max-width:200px;
     }
     .image-container{
         order:1;
-        width:100%;
+        width:80%;
         height:100%;
         max-width:520px;
         max-height:520px;
@@ -1313,7 +1313,7 @@ max-width:200px;
     top:-10px;
 }
 .download-holder{
-    width:70%;
+    width:60%;
     max-width: 300px;
     margin:20px auto;
 }
@@ -1325,8 +1325,11 @@ max-width:200px;
     width:40%;
 }
 /* about section  */
+#about h2{
+    top:80px;
+}
 .about{
-    top:60%;
+    top:70%;
 }
 .about{
     background: transparent;
