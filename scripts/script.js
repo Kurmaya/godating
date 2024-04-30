@@ -370,4 +370,24 @@ aboutAnim.to('.about',{
 },'<')
 }
 
-
+if(window.innerWidth<786) {
+    let aboutAnim2 = gsap.timeline({
+        scrollTrigger:{
+            trigger:'#about',
+            start:'top -550vh',
+            end:'bottom 50%',
+            // markers:true,
+            toggleActions: 'play none play reverse'
+        }
+    })
+    aboutAnim2.to('.about',{
+        width:'800px',
+        height:'1000px',
+        background:'#D92728',
+        borderRadius:'50% 50% 50% 50%',
+        ease: "elastic.out(.7,0.4)",
+        duration:1,
+        zIndex:'-1'
+    
+    })
+}

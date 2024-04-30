@@ -485,6 +485,7 @@ left:-100%
     order: 3;
     position: relative;
     bottom: 150px;
+    /* left:5%; */
 }
 
 /* .howto-write p{
@@ -495,7 +496,7 @@ left:-100%
 }
 .howto-write button{
     width: 100%;
-    height: 80px;
+    height: 50px;
     border-radius: 40px;
     font-family: sans-serif;
     color: white;
@@ -503,7 +504,7 @@ left:-100%
     border:0;
     cursor: pointer;
     margin: auto;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     
 }
 .howto-write button:hover{
@@ -808,6 +809,11 @@ background: #D92728;
     top: 150px;
     line-height: 1.2;
 }
+#getApp h4{
+    top:120px;
+    font-size: 3rem;
+    position: relative;
+}
 .getApp-wrapper{
     display: flex;
     justify-content: center;
@@ -912,6 +918,7 @@ max-width:200px;
         width: 90%;
         height: 100%;
         position: relative;
+        min-height: 80vh;
         /* margin:100px auto; */
     }
     /* section:nth-of-type(n+2){
@@ -937,25 +944,25 @@ max-width:200px;
     }
     .mobile-hero-img-holder{
         position: relative;
-        width:155%;
+        width:100%;
         height: 100%;
         /* max-width: 400px;
         max-height: 400px; */
     }
     .mobile-hero-img-holder img{
         position: relative;
-        width: 150%;
+        width: 100%;
         /* height: 90%; */
-        clip-path: circle();
+        /* clip-path: circle(); */
         object-fit: contain;
     }
-    #mobile-hero img:nth-of-type(1){
+    /* #mobile-hero img:nth-of-type(1){
         left:-60%;
         top:-150px;
         width:150%;
-        /* transform: rotateY('180deg'); */
+        transform: rotateY('180deg');
         object-position: 200px ;
-    }
+    } */
     .mobile-hero-head{
         bottom:120px;
         position: relative;
@@ -966,15 +973,16 @@ max-width:200px;
     }
     .mobile-hero-head h2{
         margin-left:20px;
+        line-height: 1;
     }
     .mobile-hero-item:nth-of-type(2){
         position: relative;
         margin-top:50px;
     }
     .mobile-hero-item:nth-of-type(2) img{
-        left:-25%!important;
+        left:5%!important;
         /* top:-150px; */
-        width:130%!important;
+        width:100%!important;
         /* transform: rotateY(180deg); */
         object-position: left!important;
     }
@@ -1011,11 +1019,7 @@ max-width:200px;
     }
 
     #mobile-hero img:nth-of-type(1){
-        left:-60%;
-        top:-150px;
-        width:150%;
-        /* transform: rotateY('180deg'); */
-        object-position: 200px ;
+        top:-115px;
     }
     /* second section */
     .what-container{
@@ -1064,7 +1068,7 @@ max-width:200px;
     .mobile-features-item{
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: center;
         width: 100%;
         margin:30px auto;
     }
@@ -1072,8 +1076,8 @@ max-width:200px;
         flex-direction: row-reverse;
     }
     .mobile-feat-img{
-        width:180px;
-        height:180px;
+        width:160px;
+        height:160px;
         max-height: 300px;
         max-width: 300px;
         background: black;
@@ -1089,23 +1093,25 @@ max-width:200px;
         object-fit: contain;
     }
     .mobile-feat-desc{
-        width:50%;
+        width:60%;
         display: grid;
         place-items:center;
         text-align: center;
     }
     .mobile-feat-desc h3{
         width:80%;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         line-height: 1;
         padding:1rem;
     }
     .mobile-feat-desc p{
         line-height: 1.2;
         color:black;
-        text-align: justify;
+        /* text-align: justify; */
         font-family: 'Nexa-Extralight';
         font-weight: bold;
+        font-size: 1rem;
+        padding:.5rem;
     }
     /* howto section  */
     #howto h2{
@@ -1138,7 +1144,11 @@ max-width:200px;
     }
     .howto-write button{
         width: 80%;
-        margin: auto;
+        margin:40px auto auto;
+        height: 50px;
+        font-size: 1.2rem;
+        /* left:-5%!important; */
+        position: relative;
     }
     /* faq section */
     #faq{
@@ -1153,10 +1163,11 @@ max-width:200px;
     }
     
     .faq-wrapper > .faq-img-holder{
-        width:250px;
-        order:4;
-        bottom:100px;
-        left:-20%;
+        width: 50%;
+        order: 4;
+        bottom: 100px;
+        max-width: 300px;
+        left: -20%;
     }
     .faqs{
         width:100%;
@@ -1180,4 +1191,119 @@ max-width:200px;
         left:58%;
         position: relative;
     }
+
+    /* testimonials section */
+    #testimonials h2{
+        top:60px;
+        margin-bottom:0;
+    }
+    .mt{
+        display:none;
+    }
+    .card{
+        scale:1;
+        width:185px;
+        height:350px;
+    }
+    .col:nth-of-type(2) > .card, .col:nth-of-type(3)>.card{
+        background: #D92728;
+    }
+    .col:nth-of-type(2) > .card, .col:nth-of-type(4)>.card{
+        bottom:0;
+    }
+    .col:nth-of-type(4)>.card{
+        background: #9A1D20;
+    }
+    .card-desc h3 {
+        font-size: .9rem;
+    }
+    .card-desc p{
+        font-family: 'Nexa-Extralight';
+        font-weight: bold;
+    }
+    .card-desc > *{
+        padding:.2rem;
+    }
+   
+    .col:nth-of-type(even){
+        margin-top:50px;
+    }
+    .card:hover{
+        transform: none;
+    }
+/* getapp section */
+#getApp{
+    margin: 100px auto;
+}
+#getApp h2{
+    top:50px;
+    font-size: 2.5rem;
+    text-align: left;
+    width: 75%;
+}
+#getApp h4{
+    font-size: 1.5rem;
+    text-align: left;
+    top:20px;
+    position: relative;
+    color:#991C1F;
+}
+.getApp-wrapper{
+    flex-direction: column;
+    position: relative;
+    top:100px;
+    
+}
+.getApp-bg{
+    background: #D9272829;
+    position: absolute;
+    top:56%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width:900px;
+    height: 850px;
+    border-radius: 50%;
+}
+.qr-holder,.download-buttons{
+    width:100%;
+}
+.download-buttons{
+    border-left: 0;
+    /* border-top:3px solid #9A1D20; */
+    margin-top: 20px;
+    position: relative;
+}
+.download-buttons::before{
+    content: '';
+    position: absolute;
+    width: 30%;
+    height:3px ;
+    background: #9A1D20;
+    top:-10px;
+}
+.download-holder{
+    width:70%;
+    max-width: 300px;
+    margin:20px auto;
+}
+.download-holder img{
+    width:100%;
+    max-width: 300px;
+}
+.qr-img-holder{
+    width:40%;
+}
+/* about section  */
+.about{
+    top:60%;
+}
+.about{
+    background: transparent;
+}
+#about p{
+    font-size: 12px;
+}
+.footer span{
+    font-size: .5rem;
+}
 }
