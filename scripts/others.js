@@ -1,19 +1,66 @@
 const pluses = document.querySelectorAll('.question-wrapper'),
 see = document.querySelector('.see-more'),
 back = document.querySelector('.back');
-
+let count =0;
 see.addEventListener('click',()=>{
-    back.classList.toggle('hide');
-    see.classList.toggle('hide');
-    document.querySelector('.faq-2').classList.toggle('active');
-    document.querySelector('.faq-1').classList.toggle('active');
+    count++;
+    
+    if(count == 1){
+        
+        back.classList.remove('hide');
+
+        document.querySelector('.faq-1').classList.add('active');
+        document.querySelector('.faq-2').classList.add('active');
+        document.querySelector('.faq-3').classList.remove('active');
+    }
+    else if(count == 2){
+        // back.classList.remove('hide');
+        // see.classList.add('hide');
+        // see2.classList.remove('hide');
+        document.querySelector('.faq-2').classList.remove('active');
+        document.querySelector('.faq-3').classList.add('active');
+    }
+     else if(count == 3){
+        
+        
+        document.querySelector('.faq-3').classList.remove('active');
+        document.querySelector('.faq-4').classList.add('active');
+    }
+    else if(count == 4){
+        see.classList.add('hide');
+        document.querySelector('.faq-4').classList.remove('active');
+        document.querySelector('.faq-5').classList.add('active');
+    }
+    
 })
+
 back.addEventListener('click',()=>{
-    back.classList.toggle('hide');
-    see.classList.toggle('hide');
-    document.querySelector('.faq-2').classList.toggle('active');
-    document.querySelector('.faq-1').classList.toggle('active');
+    count--;
+    if(count == 3){
+        see.classList.remove('hide');
+        document.querySelector('.faq-5').classList.remove('active');
+        document.querySelector('.faq-4').classList.add('active');
+    }
+   else if(count == 2){
+        document.querySelector('.faq-3').classList.add('active');
+        document.querySelector('.faq-4').classList.remove('active');
+    }
+    else if(count == 1){
+        document.querySelector('.faq-1').classList.add('active');
+        document.querySelector('.faq-2').classList.add('active');
+        document.querySelector('.faq-3').classList.remove('active');
+    }
+    else if(count == 0 ){
+        see.classList.remove('hide');
+        document.querySelector('.faq-1').classList.remove('active');
+        document.querySelector('.faq-2').classList.remove('active');
+        back.classList.toggle('hide');
+    }
+    
+    
+    
 })
+
 pluses.forEach(plus=>{
     plus.addEventListener('click',(e)=>{
         
