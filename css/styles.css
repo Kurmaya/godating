@@ -474,7 +474,7 @@ left:-100%
     top:25px;
 }
 
-.howto-inner-img{
+/* .howto-inner-img{
     position: absolute;
     width:65%;
     height: 70%;
@@ -486,7 +486,7 @@ left:-100%
     left:50%;
     transform: translate(-50%,-50%);
 
-}
+} */
 .howto-write{
     width: 25%;
     font-size: 1.2rem;
@@ -1088,8 +1088,10 @@ max-width:200px;
         padding:2rem 0;
     }
     .faqs{
-        width:100%;
+        width: 100%;
+        height: 80%;
         justify-content: flex-start;
+        /* padding-top: 2rem; */
     }
     .back{
         margin-top:1rem;
@@ -1098,11 +1100,11 @@ max-width:200px;
         transform: none;
     }
     .faq-wrapper > .faq-img-holder{
-        width:auto;
+        width: auto;
         height: 45%;
         left: 0;
         margin: auto;
-        bottom:70px;
+        bottom: 150px;
         z-index: -1;
     }
     .faq-img-holder > img{
