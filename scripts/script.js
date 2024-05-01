@@ -580,6 +580,11 @@ if(window.innerWidth<786) {
         toggleActions: 'play none play reverse'
     }
 })
+aboutAnim2.from('#about h2',{
+    opacity:0,
+    duration:.5,
+
+})
 aboutAnim2.to('.about',{
     width:'900px',
     height:'900px',
@@ -589,5 +594,5 @@ aboutAnim2.to('.about',{
     duration:1,
     zIndex:'-1'
 
-})
+},'-=.3')
 }
