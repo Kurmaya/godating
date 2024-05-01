@@ -1333,9 +1333,11 @@ max-width:200px;
     top:-10px;
 }
 .download-holder{
-    width:60%;
+    width: 60%;
     max-width: 300px;
-    margin:20px auto;
+    margin: 20px auto;
+    flex-direction: row;
+    gap: 20px;
 }
 .download-holder img{
     width:100%;
@@ -1346,10 +1348,10 @@ max-width:200px;
 }
 /* about section  */
 #about h2{
-    top:60px;
+    top:50px;
 }
 .about{
-    top:62%;
+    top:68%;
 }
 .about{
     background: transparent;
