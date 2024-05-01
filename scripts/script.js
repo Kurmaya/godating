@@ -55,7 +55,7 @@ if(window.innerWidth<786){
     document.querySelector('.dots img').src='./assets/images/mobile-hearts.png'
 }
 //tablet
-if(window.innerWidth<786 && window.innerWidth>600 ){
+if(window.innerWidth<999 && window.innerWidth>600 ){
  
     //hero animation
     let tl = gsap.timeline({repeat:-1});
@@ -277,7 +277,7 @@ tl.to(three,{
     
 }
 //desktop 
-if(window.innerWidth>786){
+if(window.innerWidth>1000){
     
     //hero section animation
 let tl = gsap.timeline({repeat:-1});

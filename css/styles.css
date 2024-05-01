@@ -935,7 +935,7 @@ max-width:200px;
 #mobile-hero{
     display:none;
 }
-@media screen and (min-width:601px) and (max-width:786px) {
+@media screen and (min-width:601px) and (max-width:1000px) {
     .page{
         overflow-x: hidden;
     }
