@@ -63,8 +63,20 @@ back.addEventListener('click',()=>{
 
 pluses.forEach(plus=>{
     plus.addEventListener('click',(e)=>{
-        
-        plus.querySelector('.plus1').classList.toggle('active');
+    //    console.log(e.target.parentNode.querySelector('.plus'));
+    //    if(plus.querySelector('.question').classList.contains('active')){
+    //     p.querySelector('.plus1').classList.remove('active');
+    //     p.querySelector('.answer').classList.remove('active');
+    //     p.querySelector('.question').classList.remove('active');    
+    // }
+        pluses.forEach(p=>{
+           
+            // p.classList.remove('active');
+            p.querySelector('.plus1').classList.remove('active');
+            p.querySelector('.answer').classList.remove('active');
+            p.querySelector('.question').classList.remove('active');
+        });
+        plus.querySelector('.plus1').classList.add('active');
         plus.querySelector('.answer').classList.toggle('active');
         plus.querySelector('.question').classList.toggle('active');
     })

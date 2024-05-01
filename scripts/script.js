@@ -39,6 +39,7 @@ const mages = document.querySelectorAll('.hero .img-holder img');
 const heroY = document.querySelector('.what-container').getBoundingClientRect().height;
 const heroX = document.querySelector('.hero').getBoundingClientRect().width;
 const sections = document.querySelectorAll('section');
+const items = document.querySelectorAll('.mobile-features-item');
 drop.addEventListener('click',function(){
     document.querySelector('.nav-drop').classList.add('active');
     drop.style.opacity='0';
@@ -53,7 +54,229 @@ gsap.registerPlugin(ScrollTrigger);
 if(window.innerWidth<786){
     document.querySelector('.dots img').src='./assets/images/mobile-hearts.png'
 }
+//tablet
+if(window.innerWidth<786 && window.innerWidth>600 ){
+ 
+    //hero animation
+    let tl = gsap.timeline({repeat:-1});
+tl.to(mages[0],{
+    left: '0',
+    duration:1,
+    ease: "elastic.out(.2,0.3)",
+})
+tl.to(one,{
+    left:'0',
+    duration:1,
+    ease: "elastic.out(.2,0.3)",
+},'<')
+tl.to(mages[0],{
+    left:'200%',
+    duration:.2,
+    delay:3,
+})
+tl.to(one,{
+    left:'-200%',
+    duration:.2,  
+},'<')
 
+tl.to(mages[1],{
+    left: '0',
+    duration:1,
+    ease: "elastic.out(.2,0.3)",
+})
+tl.to(two,{
+    left:'0',
+    duration:1,
+    ease: "elastic.out(.2,0.3)",
+},'<')
+tl.to(mages[1],{
+    left:'200%',
+    duration:.2,
+    delay:3,
+})
+tl.to(two,{
+    left:'-200%',
+    duration:.2, 
+},'<')
+
+tl.to(mages[2],{
+    left: '0',
+    duration:1,
+    ease: "elastic.out(.2,0.3)",
+})
+tl.to(three,{
+    left:'0',
+    duration:1,
+    ease: "elastic.out(.2,0.3)",
+},'<')
+tl.to(mages[2],{
+    left: '200%',
+    duration:.2,
+    delay:3,
+})
+tl.to(three,{
+    left:'-200%',
+    duration:.2,
+    
+},'<')
+    //tablet features animation
+    
+    let featAnim2= gsap.timeline({
+        scrollTrigger:{
+            trigger:'#features',
+            start:'top 70%',
+            // makers:true,
+            toggleActions: 'play none play reverse'
+        }
+    })
+    featAnim2.from('#features h2',{
+        x:-1000,
+        duration:.4,
+        ease: "elastic.out(.7,0.4)",
+
+    })
+    items.forEach((item,i)=>{
+        featAnim2.from(item,{
+            x:'150%',
+            duration:.3,
+            ease: "elastic.out(.4,0.3)",
+            // stagger:0.05,
+        })
+    },'simultaneously');
+    //tablet howto animation
+    let howtoAnim2= gsap.timeline({
+        scrollTrigger:{
+            trigger:'#howto',
+            start:'top 80%',
+            // makers:true,
+            toggleActions: 'play none play reverse'
+        }
+    })
+    howtoAnim2.from('#howto h2',{
+        x:-1000,
+        duration:.5,
+        ease: "elastic.out(.7,0.4)",
+    })
+    howtoAnim2.from('#howto h4',{
+        x:-1000,
+        duration:.5,
+        ease: "elastic.out(.7,0.4)",
+    },'-=.1')
+    howtoAnim2.from('.howto-img-container',{
+        x:1000,
+        duration:.5,
+        ease: "elastic.out(.7,0.4)",
+    },'-=.3')
+    howtoAnim2.from('.howto-write',{
+        x:1000,
+        duration:.5,
+        ease: "elastic.out(.7,0.4)",
+    },'<')
+    //tablet faqs animation
+    let faqAnim2= gsap.timeline({
+        scrollTrigger:{
+            trigger:'#faq',
+            start:'top center',
+            // makers:true,
+            toggleActions: 'play none play reverse'
+        }
+    })
+    faqAnim2.from('#faq h2',{
+        x:-1000,
+        duration:.5,
+        ease: "elastic.out(.7,0.4)",
+    })
+    faqAnim2.from('.faq-wrapper',{
+        x:1000,
+        duration:.3,
+        ease: "elastic.out(.7,0.4)",
+    },'-=.1')
+    faqAnim2.from('.faq-img-holder',{
+        opacity:0,
+        duration:.5,
+        ease: "elastic.out(.7,0.4)",
+    })
+    //tablet testimonials animation
+    let testiAnim2 = gsap.timeline({
+        scrollTrigger:{
+            trigger:'#testimonials',
+            start:'top center',
+            // makers:true,
+            toggleActions: 'play none play reverse'
+        }
+    })
+    testiAnim2.from('.testimonials-wrapper',{
+        left:1000,
+        duration:1,
+        ease: "elastic.out(.7,0.4)",
+    })
+    //ablet getApp animation
+    let getAnim2 = gsap.timeline({
+        scrollTrigger:{
+            trigger:'#getApp',
+            start:'top 50%',
+            // makers:true,
+            toggleActions: 'play none play reverse'
+        }
+    })
+    getAnim2.from('#getApp h2',{
+        left:-1000,
+        ease: "elastic.out(.7,0.4)",
+        duration:.5,
+    })
+    getAnim2.from('#getApp h4',{
+        left:-1000,
+        ease: "elastic.out(.7,0.4)",
+        duration:.5,
+    },'-=.1')
+    getAnim2.from('.getApp-wrapper',{
+        y:500,
+        opacity:0,
+        ease: "elastic.out(.7,0.4)",
+        duration:.5,
+    },'-=.1')
+    getAnim2.from('.download-holder',{
+        // y:500,
+        opacity:0,
+        ease: "elastic.out(.7,0.4)",
+        duration:.5,
+    },'<')
+   
+    getAnim2.from('.getApp-bg',{
+        width:0,
+        height:0,
+        duration:.5,
+        display:'block',
+        ease: "elastic.out(.7,0.4)",
+    },'-=.5')
+
+    //tablet about animation
+    let aboutAnim = gsap.timeline({
+        scrollTrigger:{
+            trigger:'#about',
+            start:'top 40%',
+            toggleActions: 'play none play reverse'
+        }
+    })
+    aboutAnim.to('.download',{
+        display:'grid',
+        duration:.2,
+        ease:'none',
+    })
+    
+    aboutAnim.to('.about',{
+        width:'1250px',
+        height:'1250px',
+        background:'#D92728',
+        borderRadius:'50% 50% 50% 50%',
+        ease: "elastic.out(.7,0.4)",
+        duration:2,
+        zIndex:'-1'
+    
+    },'<')
+    
+}
+//desktop 
 if(window.innerWidth>786){
     
     //hero section animation
@@ -149,8 +372,7 @@ tl2.from('.image-container',{
 },'simultaneously');
 
 //animation for features section
-// const featX= document.getElementById('features').getBoundingClientRect().width;
-// const featY= document.getElementById('features').getBoundingClientRect().top;
+
 let tl3 = gsap.timeline({
     scrollTrigger:{
         trigger: "#features",
@@ -377,7 +599,7 @@ aboutAnim.to('.about',{
 }
                 //*mobile animations*
 const heroMages= document.querySelectorAll('.mobile-hero-item img');
-if(window.innerWidth<786) {
+if(window.innerWidth<600 && window.innerWidth>320) {
     //hero section animation
     let heroAnim = gsap.timeline({
         scrollTrigger:{
@@ -442,7 +664,7 @@ if(window.innerWidth<786) {
     },'-=.3')
    
     //features animation
-    const items = document.querySelectorAll('.mobile-features-item');
+    
     let featAnim2= gsap.timeline({
         scrollTrigger:{
             trigger:'#features',
