@@ -24,9 +24,14 @@ h2{
 }
 nav{
     width:100%;
-    background: black;
+    /* background: black; */
+    background-image: url('../assets/images/desktop\ header\ bg.svg');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: fill;
+    /* background-size: contain; */
     height:15vh;
-    border-radius: 0 0 55% 5%;
+    /* border-radius: 0 0 55% 5%; */
     position: sticky;
     top:0;
     z-index: 100;
@@ -38,7 +43,8 @@ nav{
 }
 nav.active{
     height:10vh;
-    border-radius: 0;
+    background-position: center 5%;
+    /* border-radius: 0; */
 }
 .nav-holder{
     position: relative;
@@ -390,11 +396,11 @@ width: 90%;
     position: absolute;
     top:50%;
     width:70%;
-    transform: translateY(30px);
+    transform: translateY(20px);
     color:white;
 }
 .feat:hover > .feat-under{
-height: 175% ;
+height: 180% ;
 transform: translateY(10px);
 border-radius: 35% 35% 0 0;
 opacity: 1;
@@ -914,6 +920,10 @@ max-width:200px;
     margin:auto 1rem;
     font-family: sans-serif;
 }
+.footer-circle{
+    display:none;
+}
+
 .page{
     overflow: hidden;
 }
@@ -997,16 +1007,21 @@ max-width:200px;
         object-position: left!important;
     }
     .mobile-hero-item:nth-of-type(3) img{
-        left:-40%!important;
+        left:-5%!important;
+        width:100%;
     }
     .scroll{
         display:none!important;
     }
     nav{
-        border-radius: 0 0 25% 25%;
+        /* border-radius: 0 0 25% 25%; */
         position:fixed;
         top:0;
         height:100px;
+        background: transparent;
+        background-image: url('../assets/images/Rectangle\ 21.svg');
+        background-position: center 99%;
+        
     }
     .nav-holder{
         width:100%;
@@ -1043,8 +1058,10 @@ max-width:200px;
         width:100%;
     }
     .desc p{
-        width:100%;
+        width: 100%;
         text-align: justify;
+        font-family: 'Nexa-ExtraLight';
+        font-weight: bold;
     }
     .image-container{
         order:1;
@@ -1131,6 +1148,8 @@ max-width:200px;
         color:black;
         font-size: 1.2rem;
         margin:auto;
+        font-family: 'Nexa-Extralight';
+        font-weight: bold;
     }
     .howto-container{
         top:0;
@@ -1267,7 +1286,7 @@ max-width:200px;
     margin: 100px auto;
 }
 #getApp h2{
-    top:50px;
+    top:80px;
     font-size: 2.5rem;
     text-align: left;
     width: 75%;
@@ -1275,7 +1294,7 @@ max-width:200px;
 #getApp h4{
     font-size: 1.5rem;
     text-align: left;
-    top:20px;
+    top:60px;
     position: relative;
     color:#991C1F;
 }
@@ -1295,7 +1314,7 @@ max-width:200px;
     height: 850px;
     border-radius: 50%;
 }
-.qr-holder,.download-buttons{
+.qr-holder{
     width:100%;
 }
 .download-buttons{
@@ -1303,6 +1322,7 @@ max-width:200px;
     /* border-top:3px solid #9A1D20; */
     margin-top: 20px;
     position: relative;
+    width:80%;
 }
 .download-buttons::before{
     content: '';
@@ -1326,10 +1346,10 @@ max-width:200px;
 }
 /* about section  */
 #about h2{
-    top:80px;
+    top:60px;
 }
 .about{
-    top:70%;
+    top:62%;
 }
 .about{
     background: transparent;
@@ -1339,5 +1359,22 @@ max-width:200px;
 }
 .footer span{
     font-size: .5rem;
+}
+.footer-circle{
+display: block;
+width:100vw;
+height:100px;
+background-image: url('../assets/images/Ellipse\ 4.png');
+background-size: 150%;
+background-position: center top;
+background-repeat:no-repeat ;
+
+display: grid;
+place-items:center;
+}
+.footer-circle img{
+    width:150px;
+    margin:auto;
+
 }
 }

@@ -317,6 +317,12 @@ getAnim.from('#getApp h2',{
     duration:.3,
     ease: "elastic.out(.6,0.4)",
 })
+getAnim.from('#getApp h4',{
+    opacity:0,
+    y:500,
+    duration:.3,
+    ease: "elastic.out(.6,0.4)",
+},'<')
 getAnim.from('.getApp-wrapper',{
     opacity:0,
     y:500,
@@ -370,9 +376,45 @@ aboutAnim.to('.about',{
 },'<')
 }
                 //*mobile animations*
-
+const heroMages= document.querySelectorAll('.mobile-hero-item img');
 if(window.innerWidth<786) {
-
+    //hero section animation
+    let heroAnim = gsap.timeline({
+        scrollTrigger:{
+            trigger:heroMages[1],
+            start:'30px 50%',
+            makers:true,
+            toggleActions: 'play none play reverse'
+        }
+    })
+    heroAnim.from(heroMages[1],{
+        x:80,
+        duration:.5,
+        ease:'power1'
+    })
+    heroAnim.from(heroMages[1].parentNode.parentNode.querySelector('h2'),{
+        x:80,
+        duration:.5,
+        ease:'power1'
+    },'<')
+    let heroAnim2 =gsap.timeline({
+        scrollTrigger:{
+            trigger:heroMages[2],
+            start:'top 50%',
+            makers:true,
+            toggleActions: 'play none none reverse'
+        }
+    })
+    heroAnim2.from(heroMages[2],{
+        x:-80,
+        duration:.5,
+        ease:'power1'
+    }) 
+    heroAnim2.from(heroMages[2].parentNode.parentNode.querySelector('h2'),{
+        x:-80,
+        duration:.5,
+        ease:'power1'
+    },'<')
     //section two animation
 
     let sectionTwoanim = gsap.timeline({
@@ -532,15 +574,15 @@ if(window.innerWidth<786) {
    let aboutAnim2 = gsap.timeline({
     scrollTrigger:{
         trigger:'#about',
-        start:'top 50%',
+        start:'30px 50%',
         // end:'bottom 50%',
         // markers:true,
         toggleActions: 'play none play reverse'
     }
 })
 aboutAnim2.to('.about',{
-    width:'800px',
-    height:'1000px',
+    width:'900px',
+    height:'900px',
     background:'#D92728',
     borderRadius:'50% 50% 50% 50%',
     ease: "elastic.out(.7,0.4)",
