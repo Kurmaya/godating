@@ -59,6 +59,24 @@ nav.active{
     justify-content: space-between;
     align-items: center;
 }
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    margin-left:-50px;
+}
+.nav-links ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.nav-links ul li{
+    list-style-type: none;
+    display: inline;
+    font-weight:200;
+}
+
 .nav-drop{
     width:100%;
     height: 100vh;
@@ -68,9 +86,11 @@ nav.active{
     transition: .5s ease;
     z-index: 10000;
 }
+
 .download{
     width:300px;
     height:250px;
+    border:1px solid rgb(254, 169, 169);
     border-radius: 50%;
     background:#d62728;
     text-align: center;
@@ -109,12 +129,72 @@ nav.active{
     height: 50px;
     color: white;
     font-size: 3rem;
-    top:15%;
+    top:20%;
     right:5%;
+    pointer-events: none;
+    display: none;
+    opacity: 0;
+}
+.close.active{
+    pointer-events: all;
     cursor:pointer;
+    display: inline;
+    opacity: 1;
+}
+.close::before,.close::after{
+    content:'';
+    width:30px;
+    height:5px;
+    background: white;
+    position: absolute;
+    top:50%;
+    left:25%;
+    transform: translateY(-40%,-50%);
+    /* z-index: 100; */
+}
+.close::before{
+    transform: rotateZ(45deg);
+}
+.close::after{
+    transform: rotateZ(-45deg);
 }
 .nav-drop.active{
     top:0;
+}
+.nav-drop-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+    margin: auto;
+}
+.nav-drop-links ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:50px;
+    width: 80%;
+}
+.nav-drop-links ul li{
+    list-style-type: none;
+    color:white;
+    font-size: 2.2rem;
+    /* width:100%; */
+    display: block;
+    
+}
+.nav-drop-links a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+    border-radius: 15px;
+}
+.nav-drop-links a{
+background: linear-gradient(90deg, #E92729 0%, #931C1F 100%);
 }
 
 .logo{
@@ -141,9 +221,11 @@ nav.active{
 }
 
 .dots{
+    /* display: none!important; */
     /* margin-right:7.5%; */
     cursor: pointer;
     transition: .2s ease;
+    pointer-events: none;
 }
 .dots img{
     width:100%;
@@ -317,6 +399,9 @@ section{
     height: 100%;
     object-fit: contain;
 }
+#features .scroll{
+    left:100%;
+}
 #features h2{
     /* font-size: 4rem; */
     position: relative;
@@ -329,17 +414,53 @@ section{
     width: 100%;
     height: 100%;
     display: flex;
+    flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
+    overflow: hidden;
 }
 .feat-wrapper{
     width:100%;
-    display:flex;
+    height: 105%;;
+    display:grid;
+    grid-template-columns: repeat(7,1fr);
+    gap:0 30px;
     justify-content: space-around;
     align-items: center;
     position: relative;
     bottom:130px;
+    overflow-x: scroll;
+    /* scrollbar-color:#9A1D20 transparent  ;
+    scrollbar-width: thin; */
 }
+
+
+.feat-wrapper::-webkit-scrollbar{
+    width:16px;
+}
+.feat-wrapper::-webkit-scrollbar-thumb {
+    background-color: #D92728;
+    border: 4px solid transparent;
+    border-radius: 8px;
+    background-clip: padding-box;  
+  }
+/* .feat-wrapper ::-webkit-scrollbar:horizontal{
+    background: #9A1D20;
+} */
+/* .feat-wrapper ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  } */
+   
+  
+ 
+  
+  /* Handle on hover */
+  .feat-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+    cursor: grab;
+    /* width:18px; */
+  }
 .feat{
     width: 220px;
     height: 220px;
@@ -350,6 +471,7 @@ section{
     text-align: center;
     transition: .5s ease;
     top:0;
+    margin:auto 20px;
 }
 .feat img{
     position: absolute;
@@ -540,7 +662,7 @@ line-height: 1.2;
     justify-content: center;
     width: 55%;
     height: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .faq-wrapper > .faq-img-holder{
     position: relative;
@@ -556,8 +678,8 @@ line-height: 1.2;
     text-align: center;
     display: flex;
     flex-direction: column;
-    flex-basis: 0;
-    gap:10px;
+    /* flex-basis: 0; */
+    gap:5px;
 }
 
 .question-wrapper{
@@ -722,8 +844,10 @@ display:none;
 .see-more:hover {
     transform: scale(1.15) translateY(5px);
 }
+
 #testimonials {
     position: relative;
+    display:none;
 }
 #testimonials h2{
     text-align: left;
@@ -840,6 +964,9 @@ background: #D92728;
     align-items: center;
     height: 100%;
 }
+.getApp-wrapper > *{
+    margin-top:-120px;
+}
 .qr-holder{
     display: grid;
     width:40%;
@@ -914,15 +1041,19 @@ max-width:200px;
 }
 .footer{
     display: flex;
+    flex-wrap: wrap;
     width:100%;
     position: absolute;
     bottom:2%;
     justify-content: space-around;
     align-items: center;
+    
 }
 .footer span{
     margin:auto 1rem;
     font-family: sans-serif;
+    font-family: 'Nexa-ExtraLight';
+    font-weight: bold;
 }
 
 .footer-circle{
@@ -935,9 +1066,40 @@ max-width:200px;
 #mobile-hero{
     display:none;
 }
+/*partners section desktop*/
+#partners{
+    display: none;
+}
+
+#partners h2 ,#partners h3{
+    color:white;
+}
+#partners h2{
+    position: relative;
+    top:60px;
+}
+.partners-wrapper,.venue,.market{
+    position: relative;
+    top:80px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.venue,.market{
+    width:100%;
+    height:50%;
+    top:0;
+}
+
+/*tablets styling*/
 @media screen and (min-width:601px) and (max-width:1000px) {
     .page{
         overflow-x: hidden;
+    }
+    section:nth-of-type(4){
+        height:100%;
     }
     .black-circle,.red-circle{
         width:300px;
@@ -1089,8 +1251,9 @@ max-width:200px;
     }
     .faqs{
         width: 100%;
-        height: 80%;
+        height: 100%;
         justify-content: flex-start;
+        /* overflow: auto; */
         /* padding-top: 2rem; */
     }
     .back{
@@ -1102,9 +1265,9 @@ max-width:200px;
     .faq-wrapper > .faq-img-holder{
         width: auto;
         height: 45%;
-        left: 0;
+        left: -30%;
         margin: auto;
-        bottom: 150px;
+        /* bottom: 150px; */
         z-index: -1;
     }
     .faq-img-holder > img{
@@ -1274,6 +1437,7 @@ max-width:200px;
         position: absolute;
         right:3%;
         height:30px;
+        display:block
     }
     .dots img{
         height: 100%;

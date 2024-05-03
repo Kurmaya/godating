@@ -1,6 +1,22 @@
-const pluses = document.querySelectorAll('.question-wrapper'),
+const pluses = document.querySelectorAll('.question-wrapper');
+const drop = document.querySelector('.dots');
+const close = document.querySelector('.close');
 see = document.querySelector('.see-more'),
 back = document.querySelector('.back');
+drop.addEventListener('click',function(){
+    document.querySelector('.nav-drop').classList.add('active');
+    drop.style.display='none';
+    document.body.style.overflow='hidden';
+    close.classList.add('active');
+})
+close.addEventListener('click',function(){
+    document.querySelector('.nav-drop').classList.remove('active');
+    drop.style.display='block';
+    close.classList.remove('active');
+    document.body.style.overflowY='auto';
+    document.body.style.overflowX='hidden';
+})
+
 let count =0;
 see.addEventListener('click',()=>{
     count++;
@@ -63,15 +79,11 @@ back.addEventListener('click',()=>{
 
 pluses.forEach(plus=>{
     plus.addEventListener('click',(e)=>{
-    //    console.log(e.target.parentNode.querySelector('.plus'));
-    //    if(plus.querySelector('.question').classList.contains('active')){
-    //     p.querySelector('.plus1').classList.remove('active');
-    //     p.querySelector('.answer').classList.remove('active');
-    //     p.querySelector('.question').classList.remove('active');    
-    // }
+
+    if (plus.querySelector('.question').classList.length === 1){
         pluses.forEach(p=>{
            
-            // p.classList.remove('active');
+            
             p.querySelector('.plus1').classList.remove('active');
             p.querySelector('.answer').classList.remove('active');
             p.querySelector('.question').classList.remove('active');
@@ -79,6 +91,22 @@ pluses.forEach(plus=>{
         plus.querySelector('.plus1').classList.add('active');
         plus.querySelector('.answer').classList.toggle('active');
         plus.querySelector('.question').classList.toggle('active');
+       
+    }
+
+    else if(plus.querySelector('.question').classList.length === 2){
+    
+        pluses.forEach(p=>{
+           
+            // p.classList.remove('active');
+            p.querySelector('.plus1').classList.remove('active');
+            p.querySelector('.answer').classList.remove('active');
+            p.querySelector('.question').classList.remove('active');
+        });
+
+    }
+     
+       
     })
 })
 
@@ -119,3 +147,22 @@ scrolls.forEach(scroll=>{
         scroll.querySelector('img').classList.remove('active');
     })
 })
+
+
+const navbar = document.querySelector('nav');
+//navbar resize on scroll
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+    // navbar.style.height = '10vh';
+    navbar.classList.add('active');
+    document.querySelector(".logo").classList.add('active');
+  } else {
+    // navbar.style.padding = "80px 10px";
+    
+    navbar.classList.remove('active');
+    document.querySelector(".logo").classList.remove('active');
+  }
+}
+

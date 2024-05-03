@@ -1,21 +1,4 @@
 
-const navbar = document.querySelector('nav');
-//navbar resize on scroll
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
-    // navbar.style.height = '10vh';
-    navbar.classList.add('active');
-    document.querySelector(".logo").classList.add('active');
-  } else {
-    // navbar.style.padding = "80px 10px";
-    
-    navbar.classList.remove('active');
-    document.querySelector(".logo").classList.remove('active');
-  }
-}
-
 const feats = document.querySelectorAll('.feat');
 feats.forEach(feat => {
     feat.addEventListener('mouseover',(e)=>{
@@ -33,23 +16,14 @@ iTwo =document.querySelector('.two'),
 iThree =document.querySelector('.three'),
 iHolder =document.querySelector('.img-holder');
 const circles = document.querySelectorAll('.feat');
-const drop = document.querySelector('.dots');
-const close = document.querySelector('.close');
 const mages = document.querySelectorAll('.hero .img-holder img');
 const heroY = document.querySelector('.what-container').getBoundingClientRect().height;
 const heroX = document.querySelector('.hero').getBoundingClientRect().width;
 const sections = document.querySelectorAll('section');
 const items = document.querySelectorAll('.mobile-features-item');
-drop.addEventListener('click',function(){
-    document.querySelector('.nav-drop').classList.add('active');
-    drop.style.opacity='0';
-    document.body.style.overflow='hidden';
-})
-close.addEventListener('click',function(){
-    document.querySelector('.nav-drop').classList.remove('active');
-    drop.style.opacity='1';
-    document.body.style.overflowY='scroll';
-})
+
+
+
 gsap.registerPlugin(ScrollTrigger);
 if(window.innerWidth<786){
     document.querySelector('.dots img').src='./assets/images/mobile-hearts.png'
@@ -197,19 +171,19 @@ tl.to(three,{
         ease: "elastic.out(.7,0.4)",
     })
     //tablet testimonials animation
-    let testiAnim2 = gsap.timeline({
-        scrollTrigger:{
-            trigger:'#testimonials',
-            start:'top center',
-            // makers:true,
-            toggleActions: 'play none play reverse'
-        }
-    })
-    testiAnim2.from('.testimonials-wrapper',{
-        left:1000,
-        duration:1,
-        ease: "elastic.out(.7,0.4)",
-    })
+    // let testiAnim2 = gsap.timeline({
+    //     scrollTrigger:{
+    //         trigger:'#testimonials',
+    //         start:'top center',
+    //         // makers:true,
+    //         toggleActions: 'play none play reverse'
+    //     }
+    // })
+    // testiAnim2.from('.testimonials-wrapper',{
+    //     left:1000,
+    //     duration:1,
+    //     ease: "elastic.out(.7,0.4)",
+    // })
     //ablet getApp animation
     let getAnim2 = gsap.timeline({
         scrollTrigger:{
@@ -389,7 +363,7 @@ tl3.to('.red-circle',{
 },'simultaneously')
 circles.forEach((circle,i)=>{
     tl3.from(circle,{
-        left:'150%',
+        left:'150vw',
         duration:.1,
         ease: "power1",
         stagger:0.05,
@@ -476,42 +450,44 @@ faqAnim.from('.faqs',{
 })
 
 //testimonials animation
-const cards = document.querySelectorAll('.card');
-let testiAnim = gsap.timeline({
-    scrollTrigger:{
-        trigger:'#testimonials',
-        start:'top 50%',
-        toggleActions: 'play none play reverse'
-    }
-})
-testiAnim.to('.red-circle',{
-    x:20,
-    y:'+=100vh',
-    ease:'power1'
-},'simultaneously')
-testiAnim.to('.black-circle',{
-    // x:-120,
-    y:'+=120vh',
-    ease:'power1',
-    width:'350px',
-    height:'550px'
+// const cards = document.querySelectorAll('.card');
+// let testiAnim = gsap.timeline({
+//     scrollTrigger:{
+//         trigger:'#testimonials',
+//         start:'top 50%',
+//         toggleActions: 'play none play reverse'
+//     }
+// })
+// testiAnim.to('.red-circle',{
+//     x:20,
+//     y:'+=100vh',
+//     ease:'power1'
+// },'simultaneously')
+// testiAnim.to('.black-circle',{
+//     // x:-120,
+//     y:'+=120vh',
+//     ease:'power1',
+//     width:'350px',
+//     height:'550px'
 
-},'simultaneously')
-testiAnim.to('.download',{
-    opacity:1,
-    duration:.2,
-    ease:'none',
-})
+// },'simultaneously')
+// testiAnim.to('.download',{
+//     opacity:1,
+//     duration:.2,
+//     ease:'none',
+// })
 
-cards.forEach((card,i)=>{
-    testiAnim.to(card,{
-        scale:1,
-        duration:.1,
-        ease: "power1",
-        // stagger:0.05,
-    })
-},'simultaneously');
+// cards.forEach((card,i)=>{
+//     testiAnim.to(card,{
+//         scale:1,
+//         duration:.1,
+//         ease: "power1",
+//         // stagger:0.05,
+//     })
+// },'simultaneously');
 
+
+//desktop getApp section animation 
 let getAnim = gsap.timeline({
     scrollTrigger:{
         trigger:'#getApp',
@@ -551,7 +527,7 @@ getAnim.from('.getApp-wrapper',{
     duration:.3,
     ease: "elastic.out(.6,0.4)",
 })
-
+//desktop about animation
 let aboutAnim = gsap.timeline({
     scrollTrigger:{
         trigger:'#about',
@@ -596,6 +572,7 @@ aboutAnim.to('.about',{
     zIndex:'-1'
 
 },'<')
+
 }
                 //*mobile animations*
 const heroMages= document.querySelectorAll('.mobile-hero-item img');
@@ -741,19 +718,19 @@ if(window.innerWidth<600 && window.innerWidth>320) {
         ease: "elastic.out(.7,0.4)",
     })
     //testimonials animation
-    let testiAnim2 = gsap.timeline({
-        scrollTrigger:{
-            trigger:'#testimonials',
-            start:'top center',
-            // makers:true,
-            toggleActions: 'play none play reverse'
-        }
-    })
-    testiAnim2.from('.testimonials-wrapper',{
-        left:1000,
-        duration:1,
-        ease: "elastic.out(.7,0.4)",
-    })
+    // let testiAnim2 = gsap.timeline({
+    //     scrollTrigger:{
+    //         trigger:'#testimonials',
+    //         start:'top center',
+    //         // makers:true,
+    //         toggleActions: 'play none play reverse'
+    //     }
+    // })
+    // testiAnim2.from('.testimonials-wrapper',{
+    //     left:1000,
+    //     duration:1,
+    //     ease: "elastic.out(.7,0.4)",
+    // })
     //getApp animation
     let getAnim2 = gsap.timeline({
         scrollTrigger:{
