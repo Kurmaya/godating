@@ -77,6 +77,42 @@ nav.active{
 .nav-drop.active{
     top:0;
 }
+.nav-drop-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+    margin: auto;
+}
+.nav-drop-links ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:50px;
+    width: 80%;
+}
+.nav-drop-links ul li{
+    list-style-type: none;
+    color:white;
+    font-size: 2.2rem;
+    /* width:100%; */
+    display: block;
+    
+}
+.nav-drop-links a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+    border-radius: 15px;
+}
+.nav-drop-links a{
+background: linear-gradient(90deg, #E92729 0%, #931C1F 100%);
+}
+
 .close{
     position: absolute;
     width:50px;
@@ -94,7 +130,24 @@ nav.active{
     cursor:pointer;
     display: inline;
     opacity: 1;
-    z-index: 100000;
+    z-index: 100;
+}
+.close::before,.close::after{
+    content:'';
+    width:30px;
+    height:5px;
+    background: white;
+    position: absolute;
+    top:50%;
+    left:25%;
+    transform: translateY(-40%,-50%);
+    /* z-index: 100; */
+}
+.close::before{
+    transform: rotateZ(45deg);
+}
+.close::after{
+    transform: rotateZ(-45deg);
 }
 .logo{
     width:150px;
@@ -290,4 +343,59 @@ form button {
 }
 form button:hover{
     filter: drop-shadow(0px 5px .5rem rgba(0,0,0,.5));
+}
+@media screen and (min-width:601px) and (max-width:1000px){
+
+}
+@media only screen and (max-width:600px){
+    .nav-links ul li{
+        display: none;
+    }
+ .nav-drop-links a{
+    width: 100%;
+ }
+    h2{
+        font-size: 2.5rem;
+    }
+    h4{
+        font-size: 2.5rem;
+    }
+    .left a{
+        font-size: 1.5rem;
+    }
+    .contact-wrapper{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .left,.right{
+        width: 100%;
+        justify-content: center;
+        height:auto;
+        /* align-items: center; */
+    }
+    .left{
+        margin-top: 0;
+    }
+    .right{
+        align-items: center;
+    }
+    .footer-links{
+        flex-wrap: wrap;
+    }
+    form textarea{
+        height:30%;
+        width: 100%;
+    }
+    section{
+        /* width:85%; */
+        height: auto;
+        
+    }
+    .about-desc{
+        width: 90%;
+    }
+    .about-desc p{
+        line-height: 1.1;
+        /* padding: .1rem 0; */
+    }
 }

@@ -32,7 +32,7 @@ nav{
     background-image: url('../assets/images/desktop\ header\ bg.svg');
     background-position: center bottom;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: fill;
     /* background-size: contain; */
     height:15vh;
     /* border-radius: 0 0 55% 5%; */
@@ -1095,6 +1095,16 @@ max-width:200px;
 
 /*tablets styling*/
 @media screen and (min-width:601px) and (max-width:1000px) {
+    .dots{
+        pointer-events: all;
+        z-index: 100;
+    }
+    .close{
+        z-index: 100;
+    }
+    .nav-links ul li{
+        display: none;
+    }
     .page{
         overflow-x: hidden;
     }
@@ -1335,6 +1345,12 @@ max-width:200px;
     }
 }
 @media only screen and (max-width:600px){
+    .nav-links ul li{
+        display: none;
+    }
+    .nav-drop-links a{
+        width:100%;
+    }
     h2{
         font-size: 2.5rem;
     }
@@ -1437,11 +1453,15 @@ max-width:200px;
         position: absolute;
         right:3%;
         height:30px;
-        display:block
+        display:block;
+        pointer-events: all;
     }
     .dots img{
         height: 100%;
         width: 100%;
+    }
+    .close{
+        z-index: 100;
     }
     .black-circle,.red-circle{
         display:none;
@@ -1710,6 +1730,9 @@ max-width:200px;
     position: relative;
     top:100px;
     
+}
+.getApp-wrapper > *{
+    margin-top: 0;
 }
 .getApp-bg{
     background: #D9272829;
