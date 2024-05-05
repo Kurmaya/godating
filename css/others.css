@@ -348,30 +348,50 @@ form button:hover{
 
 }
 @media only screen and (max-width:600px){
+    
     .nav-links ul li{
         display: none;
+    
     }
  .nav-drop-links a{
     width: 100%;
  }
+ .nav-drop-links ul li{
+    font-size: 1.5rem;
+ }
     h2{
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     h4{
         font-size: 2.5rem;
     }
-    .left a{
-        font-size: 1.5rem;
-    }
+  
     .contact-wrapper{
         flex-direction: column;
         align-items: flex-start;
+        justify-content: center;
+        gap:20px;
+        width:95%;
     }
     .left,.right{
         width: 100%;
         justify-content: center;
         height:auto;
         /* align-items: center; */
+    }
+    .left h4,.left a{
+        top:0;
+    }
+    .left h2{
+        text-align: center;
+    }
+    .left a{
+        font-size: 1.5rem;
+    }
+    .left p{
+        max-width: max-content;
+        font-size: 1rem;
+        margin-bottom: 1rem;
     }
     .left{
         margin-top: 0;
@@ -392,10 +412,17 @@ form button:hover{
         
     }
     .about-desc{
-        width: 90%;
+        width: 95%;
     }
     .about-desc p{
-        line-height: 1.1;
-        /* padding: .1rem 0; */
+        line-height: 1.3;
+        font-size: .9rem;
+        font-family: 'Nexa-ExtraLight';
+        margin-bottom:1rem;
+        font-weight: bold;
+        padding: .2rem 0;
+    }
+    form{
+        width:90%;
     }
 }
