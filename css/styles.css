@@ -1021,13 +1021,13 @@ max-width:200px;
     /* font-size: 4rem; */
     text-align: center;
     position: relative;
-    top:15%;
+    top:20%;
 }
 .about-desc{
     position: relative;
     /* top:180px; */
     /* width:68%; */
-    margin: auto;
+    margin:200px auto auto;
     
     
 }
@@ -1044,22 +1044,36 @@ max-width:200px;
     flex-wrap: wrap;
     width:100%;
     position: absolute;
-    bottom:2%;
-    justify-content: space-around;
+    bottom:5px;
+    justify-content: space-evenly;
     align-items: center;
     
 }
 .footer span{
-    margin:auto 1rem;
     font-family: sans-serif;
     font-family: 'Nexa-ExtraLight';
     font-weight: bold;
+    font-size: .8rem;
 }
 
 .footer-circle{
-    display:none;
+    /* display:none; */
+    position: relative;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width:100vw;
+height:15vh;
+background-image: url('../assets/images/footer-bg.svg');
+background-size: cover;
+background-position: center top;
+background-repeat:no-repeat ;
 }
-
+.footer-circle img{
+    width:120px;
+    margin-bottom:20px;
+}
 .page{
     overflow: hidden;
 }
@@ -1347,6 +1361,9 @@ max-width:200px;
 @media only screen and (max-width:600px){
     .nav-links ul li{
         display: none;
+    }
+    .nav-drop-links ul li{
+        font-size: 1.5rem;
     }
     .nav-drop-links a{
         width:100%;
@@ -1778,7 +1795,7 @@ max-width:200px;
 }
 /* about section  */
 #about h2{
-    top:20px;
+    top:120px;
 }
 .about{
     top:71%;
@@ -1789,23 +1806,27 @@ max-width:200px;
 #about p{
     font-size: 12px;
 }
+.about-desc{
+    margin:150px auto auto;
+}
 .footer span{
-    font-size: .5rem;
+    font-size: .8rem;
+    margin:auto 20px;
+}
+.footer{
+    position: relative;
 }
 .footer-circle{
-display: block;
-width:100vw;
-height:100px;
-background-image: url('../assets/images/Ellipse\ 4.png');
-background-size: 150%;
-background-position: center top;
+width:100%;
+height:13vh;
+background-size: cover;
+background-position: center 0px;
 background-repeat:no-repeat ;
+gap:20px;
 
-display: grid;
-place-items:center;
 }
 .footer-circle img{
-    width:150px;
+    width:130px;
     margin:auto;
 
 }

@@ -3,6 +3,9 @@ const drop = document.querySelector('.dots');
 const close = document.querySelector('.close');
 see = document.querySelector('.see-more'),
 back = document.querySelector('.back');
+if(window.innerWidth<786){
+    document.querySelector('.dots img').src='./assets/images/mobile-hearts.png'
+}
 drop.addEventListener('click',function(){
     document.querySelector('.nav-drop').classList.add('active');
     drop.style.display='none';
