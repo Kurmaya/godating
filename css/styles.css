@@ -1826,7 +1826,9 @@ gap:20px;
 
 }
 .footer-circle img{
-    width:130px;
+    position: relative;
+    top:10px;
+    width:100px;
     margin:auto;
 
 }

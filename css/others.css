@@ -206,8 +206,8 @@ section{
    flex-direction: column;
    justify-content: flex-start;
    align-items: center;
-    min-height:90vh;
-    gap:20px;
+    min-height:100vh;
+    /* gap:20px; */
 }
 section p{
     line-height: 1.3;
@@ -251,6 +251,17 @@ section p{
     width:130px;
     /* margin-bottom:-15px; */
     order:-1;
+}
+.footer-links{
+        flex-wrap: wrap;
+}
+#about h2{
+    margin-top:30px;
+}
+
+.about-desc{
+    width:85%;
+    margin-top: 20px;
 }
 /*contact page styling*/
 
@@ -347,10 +358,13 @@ form button:hover{
     filter: drop-shadow(0px 5px .5rem rgba(0,0,0,.5));
 }
 /* partners styling*/
+#partners h2{
+    margin-top:30px;
+}
 #partners p{
     font-family: 'Nexa-Extralight';
     font-weight: bold;
-
+    
 }
 .partners-wrapper{
     width:85%;
@@ -361,6 +375,7 @@ form button:hover{
     color:white;
 }
 .partners-wrapper h4{
+    margin-top: 20px;
     font-size: 1.5rem;
 }
 .venue-partners-wrapper{
@@ -436,9 +451,7 @@ form button:hover{
         margin: auto;
         text-align: center;
     }
-    .footer-links{
-        flex-wrap: wrap;
-    }
+ 
     form textarea{
         height:30%;
         width: 100%;
@@ -449,8 +462,13 @@ form button:hover{
         margin-top:8vh;
         
     }
+    #about h2{
+        margin-top:30px;
+    }
     .about-desc{
+        margin-top: 2rem;
         width: 95%;
+        padding-bottom:7rem;
     }
     .about-desc p{
         line-height: 1.3;
@@ -478,6 +496,14 @@ form button:hover{
         width:90%;
     }
     #partners h2{
-        margin-top:80px;
+        margin-top:30px;
+    }
+    .footer img{
+        width:100px;
+        position: relative;
+        top:10px;
+    }
+    .footer-links{
+        flex-wrap: wrap;
     }
 }
