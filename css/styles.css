@@ -221,7 +221,7 @@ background: linear-gradient(90deg, #E92729 0%, #931C1F 100%);
 }
 
 .dots{
-    /* display: none!important; */
+    display: none;
     /* margin-right:7.5%; */
     cursor: pointer;
     transition: .2s ease;
@@ -405,7 +405,7 @@ section{
 #features h2{
     /* font-size: 4rem; */
     position: relative;
-    top:80px;
+    top:40px;
 }
 .mobile-features-container{
     display: none;
@@ -582,9 +582,15 @@ left:-100%
 }
 .howto-img-wrapper{
     position: relative;
-    width:85%;
+    width:200px;
+    height:300px;
     /* margin:10% auto auto; */
     margin-top:8%;
+}
+.howto-img-wrapper img{
+    position:absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .howto-img-container{
@@ -965,7 +971,7 @@ background: #D92728;
     height: 100%;
 }
 .getApp-wrapper > *{
-    margin-top:-120px;
+    margin-top:-90px;
 }
 .qr-holder{
     display: grid;
@@ -975,7 +981,7 @@ background: #D92728;
 }
 .qr-img-holder{
     width:45%;
-    max-width: 250px;
+    max-width: 200px;
     position: relative;
 }
 .qr-img-holder img{
@@ -1112,6 +1118,7 @@ background-repeat:no-repeat ;
     .dots{
         pointer-events: all;
         z-index: 100;
+        display: block;
     }
     .close{
         z-index: 100;

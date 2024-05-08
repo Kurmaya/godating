@@ -321,7 +321,7 @@ tl.to(three,{
 let tl2 = gsap.timeline({
     scrollTrigger:{
         trigger:'#what',
-        start:'top 50%',
+        start:'top 60%',
         duration:.5,
         toggleActions:"play none play reverse"
     }
@@ -417,37 +417,37 @@ tl4.from('.howto-img-container',{
 let phoneAnim = gsap.timeline();
 
 
-//faq animation
-let faqAnim = gsap.timeline({
-    scrollTrigger:{
-        trigger:'#faq',
-        start:'top 50%',
-        toggleActions: 'play none play reverse'
-    }
-})
-faqAnim.to('.red-circle',{
-    x:20,
-    y:'+=800',
-    ease:'power1'
-},'simultaneously')
-faqAnim.to('.black-circle',{
-    // x:-120,
-    y:'+=80vh',
-    ease:'power1',
-    width:'+=350px',
-    height:'+=550px'
+// //faq animation
+// let faqAnim = gsap.timeline({
+//     scrollTrigger:{
+//         trigger:'#faq',
+//         start:'top 50%',
+//         toggleActions: 'play none play reverse'
+//     }
+// })
+// faqAnim.to('.red-circle',{
+//     x:20,
+//     y:'+=800',
+//     ease:'power1'
+// },'simultaneously')
+// faqAnim.to('.black-circle',{
+//     // x:-120,
+//     y:'+=80vh',
+//     ease:'power1',
+//     width:'+=350px',
+//     height:'+=550px'
 
-},'simultaneously')
-faqAnim.from('.faq-img-holder',{
-    x:-1500,
-    duration:.3,
-    ease: "elastic.out(.6,0.4)",
-})
-faqAnim.from('.faqs',{
-    x:1800,
-    duration:.3,
-    ease: "elastic.out(.3,0.2)",
-})
+// },'simultaneously')
+// faqAnim.from('.faq-img-holder',{
+//     x:-1500,
+//     duration:.3,
+//     ease: "elastic.out(.6,0.4)",
+// })
+// faqAnim.from('.faqs',{
+//     x:1800,
+//     duration:.3,
+//     ease: "elastic.out(.3,0.2)",
+// })
 
 //testimonials animation
 // const cards = document.querySelectorAll('.card');
