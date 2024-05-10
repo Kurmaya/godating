@@ -476,6 +476,7 @@ section p{
 }
 .about-numbers h3:last-of-type{
     text-align: center;
+    line-height: 1.1;
 }
 em{
     font-family: 'Nexa-Heavy';
