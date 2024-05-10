@@ -497,11 +497,11 @@ let getAnim = gsap.timeline({
 })
 
 getAnim.to('.red-circle',{
-    y:'+=90vh',
+    y:'+=70vh',
     ease:'none'
 },'simultaneously')
 getAnim.to('.black-circle',{
-    y:'+=110vh',
+    y:'+=90vh',
     ease:'none'
 },'simultaneously')
 getAnim.to('.download',{
