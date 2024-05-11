@@ -3,6 +3,8 @@ const drop = document.querySelector('.dots');
 const close = document.querySelector('.close');
 see = document.querySelector('.see-more'),
 back = document.querySelector('.back');
+document.querySelector('.year').innerText = new Date().getFullYear();
+document.querySelector('.year').style.fontWeight='normal';
 if(window.innerWidth<786){
     document.querySelector('.dots img').src='./assets/images/mobile-hearts.png'
 }

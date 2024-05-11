@@ -19,7 +19,8 @@ close.addEventListener('click',function(){
     document.body.style.overflowY='auto';
     document.body.style.overflowX='hidden';
 })
-
+document.querySelector('.year').innerText = new Date().getFullYear();
+document.querySelector('.year').style.fontWeight='normal';
 // let count =0;
 // see.addEventListener('click',()=>{
 //     count++;

@@ -1371,6 +1371,11 @@ background-repeat:no-repeat ;
     }
 }
 @media only screen and (max-width:600px){
+   
+    .logo{
+        width:120px;
+        height:70px;
+    }
     .nav-links ul li{
         display: none;
     }
@@ -1388,11 +1393,8 @@ background-repeat:no-repeat ;
         height: 100%;
         position: relative;
         min-height: 80vh;
-        /* margin:100px auto; */
     }
-    /* section:nth-of-type(n+2){
-        margin: 50px auto;
-    } */
+
     #what{
         top:100px;
     }
@@ -1415,23 +1417,13 @@ background-repeat:no-repeat ;
         position: relative;
         width:100%;
         height: 100%;
-        /* max-width: 400px;
-        max-height: 400px; */
     }
     .mobile-hero-img-holder img{
         position: relative;
         width: 100%;
-        /* height: 90%; */
-        /* clip-path: circle(); */
         object-fit: contain;
     }
-    /* #mobile-hero img:nth-of-type(1){
-        left:-60%;
-        top:-150px;
-        width:150%;
-        transform: rotateY('180deg');
-        object-position: 200px ;
-    } */
+    
     .mobile-hero-head{
         bottom:120px;
         position: relative;
@@ -1450,9 +1442,7 @@ background-repeat:no-repeat ;
     }
     .mobile-hero-item:nth-of-type(2) img{
         left:5%!important;
-        /* top:-150px; */
         width:100%!important;
-        /* transform: rotateY(180deg); */
         object-position: left!important;
     }
     .mobile-hero-item:nth-of-type(3) img{
@@ -1463,7 +1453,6 @@ background-repeat:no-repeat ;
         display:none!important;
     }
     nav{
-        /* border-radius: 0 0 25% 25%; */
         position:fixed;
         top:0;
         height:100px;
@@ -1475,8 +1464,7 @@ background-repeat:no-repeat ;
         
     }
     .nav-holder{
-        width:100%;
-        justify-content: center;
+        width:85%;
     }
     .dots{
         position: absolute;
@@ -1590,7 +1578,6 @@ background-repeat:no-repeat ;
     .mobile-feat-desc p{
         line-height: 1.2;
         color:black;
-        /* text-align: justify; */
         font-family: 'Nexa-Extralight';
         font-weight: bold;
         font-size: 1rem;
@@ -1632,7 +1619,6 @@ background-repeat:no-repeat ;
         margin:40px auto auto;
         height: 50px;
         font-size: 1.2rem;
-        /* left:-5%!important; */
         position: relative;
     }
     /* faq section */
