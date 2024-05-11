@@ -14,12 +14,14 @@ gsap.defaults({
 let circ1Anim = gsap.timeline({
     scrollTrigger:{
         trigger:circles[0],
-        start:'top 55%',
+        start:'top 80%',
+        // markers:true,
         toggleActions: 'play none none none'
     }
 });
 circ1Anim.from('.circle1',{
-    left:'-150vw',
+    scale:0,
+    ease: "elastic.out(.6,0.4)",
 })
 circ1Anim.from('.circle1 .black-circle1',{
     scale:0,
@@ -47,7 +49,8 @@ circ1Anim.from('.circle1 .black-circle2',{
  let circ2Anim  = gsap.timeline({
     scrollTrigger:{
         trigger:'.circle2',
-        start:'top bottom',
+        start:'top 85%',
+        // markers:true,
         toggleActions: 'play none none none'
     }
 });
@@ -75,7 +78,8 @@ circ3Anim.from('.circle3 img',{
 let exciteAnim  = gsap.timeline({
     scrollTrigger:{
         trigger:'.excitement',
-        start:'top 80%',
+        start:'top 70%',
+        // markers:true,
         toggleActions: 'play none none none',
     }
 });

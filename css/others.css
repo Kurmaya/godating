@@ -246,8 +246,12 @@ section p{
     background-repeat: no-repeat;
     background-position:center 0px;
     background-size: cover;
-    height: 12vh;
+    height: 18vh;
     gap:10px;
+}
+.footer p{
+    font-family: 'Nexa-ExtraLight';
+    
 }
 .footer-links{
     display:flex;
@@ -273,12 +277,12 @@ section p{
 }
 #about{
     margin-bottom: 50px;
-    width:85%;
+    width:90%;
     margin-left: auto;
     margin-right:auto;
 }
 .about-head{
-    font-size:7rem;
+    font-size:10rem;
     position: relative;
     color:rgba(0,0,0,.2);
     left:25%;
@@ -360,7 +364,7 @@ section p{
     z-index: 1;
 }
 .circle2 h3{
-    margin-top:100px;
+    margin-top:150px;
 }
 .circle2 img{
     height: 350px;
@@ -413,6 +417,7 @@ section p{
     margin: auto;
     gap:20px;
     margin-bottom:50px;
+    text-align: center;
 }
 .excitement{
     margin-top:-100px;
@@ -433,6 +438,7 @@ section p{
     align-items: center;
     position: relative;
     margin: auto;
+    
 }
 .ghost img ,.real img{
     position: absolute;
@@ -474,7 +480,7 @@ section p{
     right:-70px;
     bottom:0px;
 }
-.about-numbers h3:last-of-type{
+.end{
     text-align: center;
     line-height: 1.1;
 }
@@ -869,11 +875,53 @@ form button:hover{
         /* width:18px; */
       }
 @media screen and (min-width:601px) and (max-width:1000px){
-    .dots{
-        display: block;
+    .footer{
+        width:104%;
+        
     }
+    .footer p{
+        font-size: .8rem;
+    }
+    .logo.active {
+        height: 50px;
+        width: 100px;
+        padding-top: 0;
+    }
+    .dots{
+        display: block!important;
+    }
+    .nav-links ul li{
+        display: none;
+    }
+    .about-head{
+        font-size: 5rem;
+    }
+    .circle1{
+        left:-6%;
+    }
+    .circle2{
+        left:10px;
+    }
+    .circle3{
+        left:-65px;
+    }
+    .circle3 img{
+        top: 20px;
+    left: 205px;
+    }
+    .circle3 .black-circle1 {
+        bottom: 0;
+        left: 95px;
+    }
+   
 }
 @media only screen and (max-width:600px){
+    /* .footer{
+        width:105%;
+    } */
+    body{
+        overflow-x: hidden!important;
+    }
     .dots{
         display: block;
     }
@@ -921,6 +969,7 @@ form button:hover{
     }
     .left a{
         font-size: 1.5rem;
+        width: 100%;
     }
     .left p{
         max-width: max-content;
@@ -948,6 +997,104 @@ form button:hover{
         height: auto;
         margin-top:8vh;
         
+    }
+    /*about section mobile styling*/
+    .about-head{
+        font-size: 3rem;
+        left:15%;
+    }
+    /* .test{
+        overflow: hidden;
+    } */
+    .circle{
+        width:420px;
+        height:420px;
+    }
+    .circle h3{
+        margin-top: 60px;
+    font-size: 1.5rem !important;
+    width: 61%;
+    padding-bottom: 1rem;
+    line-height: 1;
+    
+    }
+    .circle p{
+        font-size:.8rem;
+        margin-left:15px;
+        padding:0;
+    }
+    .sp,.sp2,.sp3{
+        font-size: 1rem;
+    }
+    .circle1{
+        left:-10px;
+    }
+    .circle1 img{
+        width:120px;
+        margin:auto;
+    }
+    .circle1 .black-circle1 {
+        right: 15px;
+        top: 5px;
+    }
+    .circle2{
+        top: -10px;
+        left: 0px;
+    }
+    .circle2 h3{
+        margin-top:145px;
+    }
+    .circle2 img{
+        height: 180px;
+        left: 100px;
+        z-index: 3;
+    }
+    .circle2 .black-circle1 {
+        bottom: -5px;
+        left: 35px;
+    }
+    .circle3{
+        top: -50px;
+        left: -10px;
+    }
+    .circle3 h3{
+        margin-top:130px;
+    }
+    .circle3 img{
+        height:180px;
+        top:30px;
+    }
+    .excitement{
+        margin-top:100px;
+    }
+    .excitement,.control{
+        width:80%;
+    }
+    .ghost,.real{
+        width:250px;
+        height:250px;
+    }
+    .ghost{
+        left: 15px !important;
+    }
+    .ghost img{
+        left:-60px;
+    }
+    .ghost h4,.real h4{
+        font-size:1.2rem;
+    }
+    .real{
+        bottom: 40px;
+    left: 45px !important;
+    }
+    .real img{
+        right: -21px;
+    bottom: -10px;
+    }
+    .end{
+        font-size: 1.3rem!important;
+        width:74%;
+        margin:auto;
     }
     #about h2{
         margin-top:30px;
@@ -985,12 +1132,16 @@ form button:hover{
     #partners h2{
         margin-top:30px;
     }
+    
     .footer img{
-        width:100px;
+        width:80px;
         position: relative;
-        top:10px;
+        /* top:10px; */
     }
     .footer-links{
         flex-wrap: wrap;
+    }
+    .footer-links a{
+        margin:auto 10px;
     }
 }
