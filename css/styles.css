@@ -32,7 +32,7 @@ nav{
     background-image: url('../assets/images/desktop\ header\ bg.svg');
     background-position: center bottom;
     background-repeat: no-repeat;
-    background-size: fill;
+    background-size: cover;
     /* background-size: contain; */
     height:15vh;
     /* border-radius: 0 0 55% 5%; */
